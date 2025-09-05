@@ -13,17 +13,4 @@ config.resolver.assetExts.push(
   'flac'
 );
 
-// Configure source extensions for TypeScript
-config.resolver.sourceExts.push('ts', 'tsx');
-
-// Configure transformer for SVG support
-config.transformer = {
-  ...config.transformer,
-  babelTransformerPath: require.resolve('react-native-svg-transformer'),
-};
-
-// Configure SVG support (for icons) - remove svg from asset extensions and add to source extensions
-config.resolver.assetExts = config.resolver.assetExts.filter(ext => ext !== 'svg');
-config.resolver.sourceExts.push('svg');
-
 module.exports = config;

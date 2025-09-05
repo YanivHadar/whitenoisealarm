@@ -1,20 +1,36 @@
+/**
+ * Alarm & White Noise App
+ * 
+ * Main application component with complete navigation,
+ * authentication, and theme management.
+ */
+
+import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import 'react-native-gesture-handler';
+
+// Import providers
+import { ThemeProvider } from './src/components/providers/ThemeProvider';
+
+// Import navigation
+import { RootNavigator } from './src/navigation/RootNavigator';
+
+// Import auth initialization
+import { initializeAuth } from './src/store/auth-store';
 
 export default function App() {
+  useEffect(() => {
+    // Initialize authentication on app start
+    initializeAuth();
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style='auto' />
-    </View>
+    <SafeAreaProvider>
+      <ThemeProvider>
+        <StatusBar style="auto" />
+        <RootNavigator />
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

@@ -17,21 +17,21 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuthStore } from '../../store/auth-store';
+import { useTheme } from '../providers/ThemeProvider';
 import { SignInSchema, SignInForm as SignInFormData } from '../../types/auth';
 import Input from '../ui/Input';
 import Button from '../ui/Button';
 
 export interface SignInFormProps {
-  onSignUpPress?: () => void;
-  onForgotPasswordPress?: () => void;
   onSuccess?: () => void;
+  onForgotPassword?: () => void;
 }
 
 export const SignInForm: React.FC<SignInFormProps> = ({
-  onSignUpPress,
-  onForgotPasswordPress,
   onSuccess,
+  onForgotPassword,
 }) => {
+  const { theme } = useTheme();
   const [formData, setFormData] = useState<SignInFormData>({
     email: '',
     password: '',
@@ -50,6 +50,8 @@ export const SignInForm: React.FC<SignInFormProps> = ({
     biometricSupported,
     biometricEnabled,
   } = useAuthStore();
+
+  const styles = createStyles(theme);
 
   React.useEffect(() => {
     // Check if biometric authentication is available and enabled
@@ -207,7 +209,7 @@ export const SignInForm: React.FC<SignInFormProps> = ({
                 title="Forgot Password?"
                 variant="ghost"
                 size="small"
-                onPress={onForgotPasswordPress}
+                onPress={onForgotPassword}
                 containerStyle={styles.forgotPasswordButton}
               />
             </View>
@@ -269,102 +271,80 @@ export const SignInForm: React.FC<SignInFormProps> = ({
             )}
           </View>
 
-          {/* Sign Up Link */}
-          <View style={styles.signUpContainer}>
-            <Text style={styles.signUpText}>Don't have an account? </Text>
-            <Button
-              title="Sign Up"
-              variant="ghost"
-              size="small"
-              onPress={onSignUpPress}
-              containerStyle={styles.signUpButton}
-            />
-          </View>
+          {/* Sign Up Link - Removed for navigation integration */}
         </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({
+const createStyles = (theme: any) => StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: theme.colors.background,
   },
   keyboardView: {
     flex: 1,
   },
   scrollContent: {
     flexGrow: 1,
-    paddingHorizontal: 24,
-    paddingTop: 20,
-    paddingBottom: 40,
+    paddingHorizontal: theme.spacing[6],
+    paddingTop: theme.spacing[5],
+    paddingBottom: theme.spacing[10],
   },
   header: {
     alignItems: 'center',
-    marginBottom: 32,
+    marginBottom: theme.spacing[8],
   },
   title: {
-    fontSize: 28,
-    fontWeight: '700',
-    color: '#111827',
-    marginBottom: 8,
+    fontSize: theme.fontSize['3xl'],
+    fontWeight: theme.fontWeight.bold,
+    color: theme.colors.text,
+    marginBottom: theme.spacing[2],
     textAlign: 'center',
   },
   subtitle: {
-    fontSize: 16,
-    color: '#6B7280',
+    fontSize: theme.fontSize.base,
+    color: theme.colors.textSecondary,
     textAlign: 'center',
-    lineHeight: 24,
+    lineHeight: theme.lineHeight.relaxed * theme.fontSize.base,
   },
   form: {
-    marginBottom: 32,
+    marginBottom: theme.spacing[8],
   },
   forgotPasswordContainer: {
     alignItems: 'flex-end',
-    marginBottom: 24,
+    marginBottom: theme.spacing[6],
   },
   forgotPasswordButton: {
     alignSelf: 'flex-end',
   },
   signInButton: {
-    marginBottom: 16,
+    marginBottom: theme.spacing[4],
   },
   biometricButton: {
-    marginBottom: 16,
+    marginBottom: theme.spacing[4],
   },
   divider: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 24,
+    marginBottom: theme.spacing[6],
   },
   dividerLine: {
     flex: 1,
     height: 1,
-    backgroundColor: '#E5E7EB',
+    backgroundColor: theme.colors.border,
   },
   dividerText: {
-    marginHorizontal: 16,
-    fontSize: 14,
-    color: '#6B7280',
+    marginHorizontal: theme.spacing[4],
+    fontSize: theme.fontSize.sm,
+    color: theme.colors.textSecondary,
   },
   oauthContainer: {
-    marginBottom: 32,
+    marginBottom: theme.spacing[8],
   },
   oauthButton: {
-    marginBottom: 12,
-  },
-  signUpContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  signUpText: {
-    fontSize: 14,
-    color: '#6B7280',
-  },
-  signUpButton: {
-    alignSelf: 'center',
+    marginBottom: theme.spacing[3],
   },
 });
 

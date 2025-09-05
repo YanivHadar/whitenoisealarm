@@ -119,8 +119,9 @@ export const Input: React.FC<InputProps> = ({
           placeholderTextColor="#9CA3AF"
           accessibilityLabel={label}
           accessibilityHint={helpText}
-          accessibilityRequired={required}
-          accessibilityInvalid={hasError}
+          accessibilityState={{ 
+            disabled: textInputProps.editable === false,
+          }}
         />
 
         {/* Right Icon */}
