@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.expo/
+dist/
+web-build/
+coverage/
+
+# Generated files
+expo-env.d.ts
+*.tsbuildinfo
+
+# Config files that should keep their format
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Assets
+assets/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+*.mp3
+*.wav
+*.mp4
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

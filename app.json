@@ -1,29 +1,134 @@
 {
   "expo": {
-    "name": "AlarmWhiteNoiseApp",
-    "slug": "AlarmWhiteNoiseApp",
+    "name": "Alarm & White Noise",
+    "slug": "alarm-white-noise",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "scheme": "alarmwhitenoise",
+    "platforms": ["ios", "android", "web"],
+    "description": "Sleep optimization platform combining customizable alarms with white noise functionality for better sleep routines.",
+    "keywords": ["alarm", "white noise", "sleep", "wake up", "audio", "relaxation", "bedtime"],
+    "privacy": "public",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1a1a2e"
     },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.alarmwhitenoise.app",
+      "buildNumber": "1",
+      "infoPlist": {
+        "UIBackgroundModes": ["audio", "background-fetch", "background-processing"],
+        "NSMicrophoneUsageDescription": "This app uses the microphone to record custom alarm sounds and white noise.",
+        "NSCameraUsageDescription": "This app may use the camera to take photos for alarm customization.",
+        "NSLocationWhenInUseUsageDescription": "Location is used for timezone-based alarm scheduling.",
+        "NSUserNotificationUsageDescription": "This app uses notifications to deliver alarms at scheduled times.",
+        "UIRequiredDeviceCapabilities": ["audio-output"]
+      },
+      "associatedDomains": ["applinks:alarmwhitenoise.com"],
+      "config": {
+        "usesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#1a1a2e"
       },
-      "edgeToEdgeEnabled": true
+      "package": "com.alarmwhitenoise.app",
+      "versionCode": 1,
+      "permissions": [
+        "VIBRATE",
+        "WAKE_LOCK",
+        "RECEIVE_BOOT_COMPLETED",
+        "FOREGROUND_SERVICE",
+        "SCHEDULE_EXACT_ALARM",
+        "USE_EXACT_ALARM",
+        "POST_NOTIFICATIONS",
+        "RECORD_AUDIO",
+        "MODIFY_AUDIO_SETTINGS",
+        "ACCESS_NOTIFICATION_POLICY",
+        "REQUEST_IGNORE_BATTERY_OPTIMIZATIONS",
+        "SYSTEM_ALERT_WINDOW"
+      ],
+      "blockedPermissions": [
+        "CAMERA"
+      ],
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "https",
+              "host": "alarmwhitenoise.com"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    },
+    "notification": {
+      "icon": "./assets/notification-icon.png",
+      "color": "#1a1a2e",
+      "androidMode": "default",
+      "androidCollapsedTitle": "Alarm & White Noise"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#1a1a2e",
+          "defaultChannel": "default",
+          "sounds": [
+            "./assets/audio/alarm1.mp3",
+            "./assets/audio/alarm2.mp3"
+          ]
+        }
+      ],
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone for recording custom sounds."
+        }
+      ],
+      [
+        "expo-background-fetch",
+        {
+          "backgroundModes": ["background-fetch"]
+        }
+      ],
+      [
+        "expo-task-manager"
+      ]
+    ],
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "alarm-white-noise",
+            "project": "alarm-white-noise-app"
+          }
+        }
+      ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "${EAS_PROJECT_ID}"
+      }
+    },
+    "owner": "alarm-white-noise-team"
   }
 }
