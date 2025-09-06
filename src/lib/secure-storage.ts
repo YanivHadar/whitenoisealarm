@@ -34,12 +34,24 @@ export type StorageKey = typeof STORAGE_KEYS[keyof typeof STORAGE_KEYS];
  * Secure storage interface for cross-platform compatibility
  */
 class SecureStorageManager {
-  private readonly isSecureStoreAvailable: boolean;
+  private isSecureStoreAvailable: boolean;
 
   constructor() {
-    this.isSecureStoreAvailable = SecureStore.isAvailableAsync ? 
-      SecureStore.isAvailableAsync() : 
-      Platform.OS !== 'web';
+    // Initialize as false, will be set properly in async init
+    this.isSecureStoreAvailable = Platform.OS !== 'web';
+    this.initializeSecureStore();
+  }
+
+  private async initializeSecureStore(): Promise<void> {
+    if (SecureStore.isAvailableAsync) {
+      try {
+        this.isSecureStoreAvailable = await SecureStore.isAvailableAsync();
+      } catch {
+        this.isSecureStoreAvailable = Platform.OS !== 'web';
+      }
+    } else {
+      this.isSecureStoreAvailable = Platform.OS !== 'web';
+    }
   }
 
   /**

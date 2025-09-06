@@ -39,7 +39,7 @@ import type {
   RealtimePayload,
   Database,
 } from '../types/database';
-import { v4 as uuidv4 } from 'uuid';
+import uuid from 'react-native-uuid';
 
 // Types for service responses
 export interface ServiceResponse<T> {

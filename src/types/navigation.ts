@@ -8,6 +8,8 @@
 import { NavigatorScreenParams } from '@react-navigation/native';
 import { StackScreenProps } from '@react-navigation/stack';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
+import { AlarmFormData } from './alarm';
+import { SubscriptionPlan } from '../services/subscription-service';
 
 // Auth Stack Navigation
 export type AuthStackParamList = {
@@ -29,9 +31,10 @@ export type MainTabParamList = {
 // Alarm Stack Navigation
 export type AlarmStackParamList = {
   AlarmList: undefined;
-  CreateAlarm: { alarmId?: string } | undefined;
+  CreateAlarm: { alarmId?: string; initialData?: AlarmFormData } | undefined;
   EditAlarm: { alarmId: string };
   AlarmDetails: { alarmId: string };
+  SessionMonitoring: { sessionId: string };
 };
 
 // White Noise Stack Navigation
@@ -40,6 +43,7 @@ export type WhiteNoiseStackParamList = {
   SoundLibrary: undefined;
   NowPlaying: { sessionId?: string } | undefined;
   SessionHistory: undefined;
+  SessionMonitoring: { sessionId: string };
 };
 
 // Settings Stack Navigation
@@ -50,6 +54,9 @@ export type SettingsStackParamList = {
   Audio: undefined;
   Privacy: undefined;
   Subscription: undefined;
+  PurchaseConfirmation: { planId: string; plan: SubscriptionPlan };
+  SubscriptionSuccess: { planId: string; plan: SubscriptionPlan };
+  SubscriptionSettings: undefined;
   Help: undefined;
   About: undefined;
 };
@@ -101,7 +108,9 @@ export type RouteProp<T extends keyof RootStackParamList> = RootStackScreenProps
 export type AlarmListScreenProps = AlarmStackScreenProps<'AlarmList'>;
 export type CreateAlarmScreenProps = AlarmStackScreenProps<'CreateAlarm'>;
 export type EditAlarmScreenProps = AlarmStackScreenProps<'EditAlarm'>;
+export type AlarmSessionMonitoringScreenProps = AlarmStackScreenProps<'SessionMonitoring'>;
 export type WhiteNoiseHomeScreenProps = WhiteNoiseStackScreenProps<'WhiteNoiseHome'>;
+export type WhiteNoiseSessionMonitoringScreenProps = WhiteNoiseStackScreenProps<'SessionMonitoring'>;
 export type SettingsHomeScreenProps = SettingsStackScreenProps<'SettingsHome'>;
 
 // Global navigation state interface

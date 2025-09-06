@@ -32,7 +32,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/97</span>
+                <span class='fraction'>0/74</span>
             </div>
         
             
@@ -1911,7 +1911,7 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
 <span class="cstat-no" title="statement not covered" >      this.errorLog.push(error);</span>
       
       // Keep only recent errors (last 100)
-<span class="cstat-no" title="statement not covered" >      if (this.errorLog.length &gt; 100) {</span>
+<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (this.errorLog.length &gt; 100) {</span>
 <span class="cstat-no" title="statement not covered" >        this.errorLog = this.errorLog.slice(-100);</span>
       }
 &nbsp;
@@ -1945,12 +1945,12 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
     const attemptKey = <span class="cstat-no" title="statement not covered" >`${error.code}_${JSON.stringify(context)}`;</span>
     const currentAttempts = <span class="cstat-no" title="statement not covered" >this.recoveryAttempts.get(attemptKey) || 0;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (recoveryPlan.strategy === 'retry' &amp;&amp; currentAttempts &lt; recoveryPlan.max_retry_attempts) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (recoveryPlan.strategy === 'retry' &amp;&amp; currentAttempts &lt; recoveryPlan.max_retry_attempts) {</span>
       // Attempt automatic retry
 <span class="cstat-no" title="statement not covered" >      this.recoveryAttempts.set(attemptKey, currentAttempts + 1);</span>
       
       // Wait before retry
-<span class="cstat-no" title="statement not covered" >      if (recoveryPlan.retry_delay_ms &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (recoveryPlan.retry_delay_ms &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >        await new Promise(<span class="fstat-no" title="function not covered" >resolve </span>=&gt; <span class="cstat-no" title="statement not covered" >setTimeout(resolve, recoveryPlan.retry_delay_ms))</span>;</span>
       }
 &nbsp;
@@ -1960,7 +1960,7 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
       };
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (recoveryPlan.strategy === 'fallback' &amp;&amp; recoveryPlan.fallback_action) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (recoveryPlan.strategy === 'fallback' &amp;&amp; recoveryPlan.fallback_action) {</span>
       // Attempt fallback action
 <span class="cstat-no" title="statement not covered" >      try {</span>
 <span class="cstat-no" title="statement not covered" >        await recoveryPlan.fallback_action();</span>
@@ -2023,7 +2023,7 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
     const warnings: AlarmValidationWarning[] = <span class="cstat-no" title="statement not covered" >[];</span>
 &nbsp;
     // Time validation
-<span class="cstat-no" title="statement not covered" >    if (!alarmData.time || !/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/.test(alarmData.time)) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (!alarmData.time || !/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/.test(alarmData.time)) {</span>
 <span class="cstat-no" title="statement not covered" >      errors.push({</span>
         field: 'time',
         code: 'INVALID_TIME',
@@ -2038,7 +2038,7 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
         code: 'INVALID_NAME',
         message: 'Alarm name is required',
       });
-    } else <span class="cstat-no" title="statement not covered" >if (alarmData.name.length &gt; 100) {</span>
+    } else <span class="cstat-no" title="statement not covered" ><span class="missing-if-branch" title="if path not taken" >I</span>if (alarmData.name.length &gt; 100) {</span>
 <span class="cstat-no" title="statement not covered" >      errors.push({</span>
         field: 'name',
         code: 'NAME_TOO_LONG',
@@ -2047,7 +2047,7 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
     }
 &nbsp;
     // Repeat pattern validation
-<span class="cstat-no" title="statement not covered" >    if (alarmData.repeat_pattern === 'custom') {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (alarmData.repeat_pattern === 'custom') {</span>
 <span class="cstat-no" title="statement not covered" >      if (!alarmData.repeat_days || alarmData.repeat_days.length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >        errors.push({</span>
           field: 'repeat_days',
@@ -2056,7 +2056,7 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
         });
       } else {
         const invalidDays = <span class="cstat-no" title="statement not covered" >alarmData.repeat_days.filter(<span class="fstat-no" title="function not covered" >day </span>=&gt; <span class="cstat-no" title="statement not covered" >day &lt; 0 || day &gt; 6)</span>;</span>
-<span class="cstat-no" title="statement not covered" >        if (invalidDays.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        <span class="missing-if-branch" title="if path not taken" >I</span>if (invalidDays.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >          errors.push({</span>
             field: 'repeat_days',
             code: 'INVALID_DAY_VALUES',
@@ -2067,7 +2067,7 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
     }
 &nbsp;
     // Volume validation
-<span class="cstat-no" title="statement not covered" >    if (alarmData.volume &lt; 0 || alarmData.volume &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (alarmData.volume &lt; 0 || alarmData.volume &gt; 1) {</span>
 <span class="cstat-no" title="statement not covered" >      errors.push({</span>
         field: 'volume',
         code: 'INVALID_VOLUME',
@@ -2076,8 +2076,8 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
     }
 &nbsp;
     // Snooze validation
-<span class="cstat-no" title="statement not covered" >    if (alarmData.snooze_enabled) {</span>
-<span class="cstat-no" title="statement not covered" >      if (alarmData.snooze_duration &lt; 1 || alarmData.snooze_duration &gt; 60) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (alarmData.snooze_enabled) {</span>
+<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (alarmData.snooze_duration &lt; 1 || alarmData.snooze_duration &gt; 60) {</span>
 <span class="cstat-no" title="statement not covered" >        errors.push({</span>
           field: 'snooze_duration',
           code: 'INVALID_SNOOZE_DURATION',
@@ -2085,7 +2085,7 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
         });
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (alarmData.snooze_count_limit &lt; 1 || alarmData.snooze_count_limit &gt; 10) {</span>
+<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (alarmData.snooze_count_limit &lt; 1 || alarmData.snooze_count_limit &gt; 10) {</span>
 <span class="cstat-no" title="statement not covered" >        errors.push({</span>
           field: 'snooze_count_limit',
           code: 'INVALID_SNOOZE_COUNT',
@@ -2095,8 +2095,8 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
     }
 &nbsp;
     // Premium feature validation
-<span class="cstat-no" title="statement not covered" >    if (!isPremium) {</span>
-<span class="cstat-no" title="statement not covered" >      if (alarmData.white_noise_enabled) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (!isPremium) {</span>
+<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (alarmData.white_noise_enabled) {</span>
 <span class="cstat-no" title="statement not covered" >        errors.push({</span>
           field: 'white_noise_enabled',
           code: 'PREMIUM_FEATURE_REQUIRED',
@@ -2104,7 +2104,7 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
         });
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (alarmData.fade_in_duration &gt; 0 || alarmData.fade_out_duration &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (alarmData.fade_in_duration &gt; 0 || alarmData.fade_out_duration &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >        errors.push({</span>
           field: 'fade_in_duration',
           code: 'PREMIUM_FEATURE_REQUIRED',
@@ -2114,8 +2114,8 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
     }
 &nbsp;
     // White noise validation
-<span class="cstat-no" title="statement not covered" >    if (alarmData.white_noise_enabled) {</span>
-<span class="cstat-no" title="statement not covered" >      if (!alarmData.white_noise_file_url &amp;&amp; !alarmData.white_noise_category) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (alarmData.white_noise_enabled) {</span>
+<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (!alarmData.white_noise_file_url &amp;&amp; !alarmData.white_noise_category) {</span>
 <span class="cstat-no" title="statement not covered" >        errors.push({</span>
           field: 'white_noise_file_url',
           code: 'WHITE_NOISE_REQUIRED',
@@ -2123,7 +2123,7 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
         });
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (alarmData.white_noise_volume &lt; 0 || alarmData.white_noise_volume &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (alarmData.white_noise_volume &lt; 0 || alarmData.white_noise_volume &gt; 1) {</span>
 <span class="cstat-no" title="statement not covered" >        errors.push({</span>
           field: 'white_noise_volume',
           code: 'INVALID_VOLUME',
@@ -2133,7 +2133,7 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
     }
 &nbsp;
     // Fade duration validation
-<span class="cstat-no" title="statement not covered" >    if (alarmData.fade_in_duration &lt; 0 || alarmData.fade_in_duration &gt; 300) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (alarmData.fade_in_duration &lt; 0 || alarmData.fade_in_duration &gt; 300) {</span>
 <span class="cstat-no" title="statement not covered" >      errors.push({</span>
         field: 'fade_in_duration',
         code: 'INVALID_FADE_DURATION',
@@ -2141,7 +2141,7 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
       });
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (alarmData.fade_out_duration &lt; 0 || alarmData.fade_out_duration &gt; 300) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (alarmData.fade_out_duration &lt; 0 || alarmData.fade_out_duration &gt; 300) {</span>
 <span class="cstat-no" title="statement not covered" >      errors.push({</span>
         field: 'fade_out_duration',
         code: 'INVALID_FADE_DURATION',
@@ -2151,7 +2151,7 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
 &nbsp;
     // Combined fade duration warning
     const totalFade = <span class="cstat-no" title="statement not covered" >alarmData.fade_in_duration + alarmData.fade_out_duration;</span>
-<span class="cstat-no" title="statement not covered" >    if (totalFade &gt; 600) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (totalFade &gt; 600) {</span>
 <span class="cstat-no" title="statement not covered" >      warnings.push({</span>
         field: 'fade_in_duration',
         code: 'LONG_FADE_DURATION',
@@ -2222,9 +2222,9 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
 <span class="fstat-no" title="function not covered" >  static </span>async loadErrorLog(): Promise&lt;void&gt; {
 <span class="cstat-no" title="statement not covered" >    try {</span>
       const data = <span class="cstat-no" title="statement not covered" >await AsyncStorage.getItem(STORAGE_KEYS.ERROR_LOG);</span>
-<span class="cstat-no" title="statement not covered" >      if (data) {</span>
+<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (data) {</span>
 <span class="cstat-no" title="statement not covered" >        this.errorLog = JSON.parse(data, <span class="fstat-no" title="function not covered" >(k</span>ey, value) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >          if (key === 'timestamp') {</span>
+<span class="cstat-no" title="statement not covered" >          <span class="missing-if-branch" title="if path not taken" >I</span>if (key === 'timestamp') {</span>
 <span class="cstat-no" title="statement not covered" >            return new Date(value);</span>
           }
 <span class="cstat-no" title="statement not covered" >          return value;</span>
@@ -2254,7 +2254,7 @@ const ERROR_METADATA: Record&lt;AlarmErrorCode, {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-05T20:17:54.229Z
+                at 2025-09-06T17:11:24.914Z
             </div>
         <script src="../prettify.js"></script>
         <script>

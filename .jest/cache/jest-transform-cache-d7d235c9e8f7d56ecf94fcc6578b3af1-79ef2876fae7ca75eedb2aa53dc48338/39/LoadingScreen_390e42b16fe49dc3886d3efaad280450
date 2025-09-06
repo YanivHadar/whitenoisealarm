@@ -1,0 +1,363 @@
+0a406bf7876f8b9d9eb03f7baeaa181f
+"use strict";
+
+/* istanbul ignore next */
+function cov_1r12x7fz9r() {
+  var path = "/Users/yanivhadar/Desktop/White Noise Alarm/AlarmWhiteNoiseApp/src/components/ui/LoadingScreen.tsx";
+  var hash = "1f4f07be239d8fb4753ae5510a6914cdde5fb5db";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/yanivhadar/Desktop/White Noise Alarm/AlarmWhiteNoiseApp/src/components/ui/LoadingScreen.tsx",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 31
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 22
+        },
+        end: {
+          line: 4,
+          column: 50
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 23
+        },
+        end: {
+          line: 5,
+          column: 46
+        }
+      },
+      "4": {
+        start: {
+          line: 6,
+          column: 24
+        },
+        end: {
+          line: 6,
+          column: 61
+        }
+      },
+      "5": {
+        start: {
+          line: 7,
+          column: 22
+        },
+        end: {
+          line: 11,
+          column: 1
+        }
+      },
+      "6": {
+        start: {
+          line: 8,
+          column: 22
+        },
+        end: {
+          line: 8,
+          column: 53
+        }
+      },
+      "7": {
+        start: {
+          line: 9,
+          column: 19
+        },
+        end: {
+          line: 9,
+          column: 38
+        }
+      },
+      "8": {
+        start: {
+          line: 10,
+          column: 4
+        },
+        end: {
+          line: 10,
+          column: 581
+        }
+      },
+      "9": {
+        start: {
+          line: 12,
+          column: 0
+        },
+        end: {
+          line: 12,
+          column: 38
+        }
+      },
+      "10": {
+        start: {
+          line: 13,
+          column: 21
+        },
+        end: {
+          line: 40,
+          column: 2
+        }
+      },
+      "11": {
+        start: {
+          line: 13,
+          column: 32
+        },
+        end: {
+          line: 40,
+          column: 2
+        }
+      },
+      "12": {
+        start: {
+          line: 41,
+          column: 0
+        },
+        end: {
+          line: 41,
+          column: 40
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 7,
+            column: 22
+          },
+          end: {
+            line: 7,
+            column: 23
+          }
+        },
+        loc: {
+          start: {
+            line: 7,
+            column: 54
+          },
+          end: {
+            line: 11,
+            column: 1
+          }
+        },
+        line: 7
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 13,
+            column: 21
+          },
+          end: {
+            line: 13,
+            column: 22
+          }
+        },
+        loc: {
+          start: {
+            line: 13,
+            column: 32
+          },
+          end: {
+            line: 40,
+            column: 2
+          }
+        },
+        line: 13
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 7,
+            column: 25
+          },
+          end: {
+            line: 7,
+            column: 47
+          }
+        },
+        type: "default-arg",
+        locations: [{
+          start: {
+            line: 7,
+            column: 35
+          },
+          end: {
+            line: 7,
+            column: 47
+          }
+        }],
+        line: 7
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {
+      "0": [0]
+    },
+    inputSourceMap: {
+      file: "/Users/yanivhadar/Desktop/White Noise Alarm/AlarmWhiteNoiseApp/src/components/ui/LoadingScreen.tsx",
+      mappings: ";;;;AAQA,+CAAyE;AACzE,8DAAsD;AAM/C,MAAM,aAAa,GAAiC,CAAC,EAC1D,OAAO,GAAG,YAAY,EACvB,EAAE,EAAE;IACH,MAAM,EAAE,KAAK,EAAE,GAAG,IAAA,wBAAQ,GAAE,CAAC;IAE7B,MAAM,MAAM,GAAG,YAAY,CAAC,KAAK,CAAC,CAAC;IAEnC,OAAO,CACL,uBAAC,mBAAI,IAAC,KAAK,EAAE,MAAM,CAAC,SAAS,YAC3B,wBAAC,mBAAI,IAAC,KAAK,EAAE,MAAM,CAAC,OAAO,aAEzB,uBAAC,mBAAI,IAAC,KAAK,EAAE,MAAM,CAAC,OAAO,oCAA4B,EAEvD,wBAAC,mBAAI,IAAC,KAAK,EAAE,MAAM,CAAC,gBAAgB,aAClC,uBAAC,gCAAiB,IAChB,IAAI,EAAC,OAAO,EACZ,KAAK,EAAE,KAAK,CAAC,MAAM,CAAC,OAAO,GAC3B,EACF,uBAAC,mBAAI,IAAC,KAAK,EAAE,MAAM,CAAC,WAAW,YAAG,OAAO,GAAQ,IAC5C,IACF,GACF,CACR,CAAC;AACJ,CAAC,CAAC;AAvBW,QAAA,aAAa,iBAuBxB;AAEF,MAAM,YAAY,GAAG,CAAC,KAAU,EAAE,EAAE,CAAC,yBAAU,CAAC,MAAM,CAAC;IACrD,SAAS,EAAE;QACT,IAAI,EAAE,CAAC;QACP,eAAe,EAAE,KAAK,CAAC,MAAM,CAAC,UAAU;QACxC,UAAU,EAAE,QAAQ;QACpB,cAAc,EAAE,QAAQ;KACzB;IACD,OAAO,EAAE;QACP,UAAU,EAAE,QAAQ;QACpB,iBAAiB,EAAE,KAAK,CAAC,OAAO,CAAC,CAAC,CAAC;KACpC;IACD,OAAO,EAAE;QACP,QAAQ,EAAE,KAAK,CAAC,QAAQ,CAAC,KAAK,CAAC;QAC/B,UAAU,EAAE,KAAK,CAAC,UAAU,CAAC,IAAI;QACjC,KAAK,EAAE,KAAK,CAAC,MAAM,CAAC,IAAI;QACxB,YAAY,EAAE,KAAK,CAAC,OAAO,CAAC,EAAE,CAAC;QAC/B,SAAS,EAAE,QAAQ;KACpB;IACD,gBAAgB,EAAE;QAChB,UAAU,EAAE,QAAQ;QACpB,GAAG,EAAE,KAAK,CAAC,OAAO,CAAC,CAAC,CAAC;KACtB;IACD,WAAW,EAAE;QACX,QAAQ,EAAE,KAAK,CAAC,QAAQ,CAAC,IAAI;QAC7B,KAAK,EAAE,KAAK,CAAC,MAAM,CAAC,aAAa;QACjC,SAAS,EAAE,QAAQ;KACpB;CACF,CAAC,CAAC;AAEH,kBAAe,qBAAa,CAAC",
+      names: [],
+      sources: ["/Users/yanivhadar/Desktop/White Noise Alarm/AlarmWhiteNoiseApp/src/components/ui/LoadingScreen.tsx"],
+      sourcesContent: ["/**\n * Loading Screen Component\n * \n * Full-screen loading indicator shown during\n * authentication initialization and app startup.\n */\n\nimport React from 'react';\nimport { View, Text, ActivityIndicator, StyleSheet } from 'react-native';\nimport { useTheme } from '../providers/ThemeProvider';\n\ninterface LoadingScreenProps {\n  message?: string;\n}\n\nexport const LoadingScreen: React.FC<LoadingScreenProps> = ({ \n  message = \"Loading...\" \n}) => {\n  const { theme } = useTheme();\n\n  const styles = createStyles(theme);\n\n  return (\n    <View style={styles.container}>\n      <View style={styles.content}>\n        {/* App Logo/Icon could go here */}\n        <Text style={styles.appName}>Alarm & White Noise</Text>\n        \n        <View style={styles.loadingIndicator}>\n          <ActivityIndicator \n            size=\"large\" \n            color={theme.colors.primary} \n          />\n          <Text style={styles.loadingText}>{message}</Text>\n        </View>\n      </View>\n    </View>\n  );\n};\n\nconst createStyles = (theme: any) => StyleSheet.create({\n  container: {\n    flex: 1,\n    backgroundColor: theme.colors.background,\n    alignItems: 'center',\n    justifyContent: 'center',\n  },\n  content: {\n    alignItems: 'center',\n    paddingHorizontal: theme.spacing[8],\n  },\n  appName: {\n    fontSize: theme.fontSize['2xl'],\n    fontWeight: theme.fontWeight.bold,\n    color: theme.colors.text,\n    marginBottom: theme.spacing[12],\n    textAlign: 'center',\n  },\n  loadingIndicator: {\n    alignItems: 'center',\n    gap: theme.spacing[4],\n  },\n  loadingText: {\n    fontSize: theme.fontSize.base,\n    color: theme.colors.textSecondary,\n    textAlign: 'center',\n  },\n});\n\nexport default LoadingScreen;"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "1f4f07be239d8fb4753ae5510a6914cdde5fb5db"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1r12x7fz9r = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+cov_1r12x7fz9r();
+cov_1r12x7fz9r().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* istanbul ignore next */
+cov_1r12x7fz9r().s[1]++;
+exports.LoadingScreen = void 0;
+const jsx_runtime_1 =
+/* istanbul ignore next */
+(cov_1r12x7fz9r().s[2]++, require("react/jsx-runtime"));
+const react_native_1 =
+/* istanbul ignore next */
+(cov_1r12x7fz9r().s[3]++, require("react-native"));
+const ThemeProvider_1 =
+/* istanbul ignore next */
+(cov_1r12x7fz9r().s[4]++, require("../providers/ThemeProvider"));
+/* istanbul ignore next */
+cov_1r12x7fz9r().s[5]++;
+const LoadingScreen = ({
+  message =
+  /* istanbul ignore next */
+  (cov_1r12x7fz9r().b[0][0]++, "Loading...")
+}) => {
+  /* istanbul ignore next */
+  cov_1r12x7fz9r().f[0]++;
+  const {
+    theme
+  } =
+  /* istanbul ignore next */
+  (cov_1r12x7fz9r().s[6]++, (0, ThemeProvider_1.useTheme)());
+  const styles =
+  /* istanbul ignore next */
+  (cov_1r12x7fz9r().s[7]++, createStyles(theme));
+  /* istanbul ignore next */
+  cov_1r12x7fz9r().s[8]++;
+  return (0, jsx_runtime_1.jsx)(react_native_1.View, {
+    style: styles.container,
+    children: (0, jsx_runtime_1.jsxs)(react_native_1.View, {
+      style: styles.content,
+      children: [(0, jsx_runtime_1.jsx)(react_native_1.Text, {
+        style: styles.appName,
+        children: "Alarm & White Noise"
+      }), (0, jsx_runtime_1.jsxs)(react_native_1.View, {
+        style: styles.loadingIndicator,
+        children: [(0, jsx_runtime_1.jsx)(react_native_1.ActivityIndicator, {
+          size: "large",
+          color: theme.colors.primary
+        }), (0, jsx_runtime_1.jsx)(react_native_1.Text, {
+          style: styles.loadingText,
+          children: message
+        })]
+      })]
+    })
+  });
+};
+/* istanbul ignore next */
+cov_1r12x7fz9r().s[9]++;
+exports.LoadingScreen = LoadingScreen;
+/* istanbul ignore next */
+cov_1r12x7fz9r().s[10]++;
+const createStyles = theme => {
+  /* istanbul ignore next */
+  cov_1r12x7fz9r().f[1]++;
+  cov_1r12x7fz9r().s[11]++;
+  return react_native_1.StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: theme.colors.background,
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    content: {
+      alignItems: 'center',
+      paddingHorizontal: theme.spacing[8]
+    },
+    appName: {
+      fontSize: theme.fontSize['2xl'],
+      fontWeight: theme.fontWeight.bold,
+      color: theme.colors.text,
+      marginBottom: theme.spacing[12],
+      textAlign: 'center'
+    },
+    loadingIndicator: {
+      alignItems: 'center',
+      gap: theme.spacing[4]
+    },
+    loadingText: {
+      fontSize: theme.fontSize.base,
+      color: theme.colors.textSecondary,
+      textAlign: 'center'
+    }
+  });
+};
+/* istanbul ignore next */
+cov_1r12x7fz9r().s[12]++;
+exports.default = exports.LoadingScreen;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJjb3ZfMXIxMng3Zno5ciIsImFjdHVhbENvdmVyYWdlIiwicyIsInJlYWN0X25hdGl2ZV8xIiwicmVxdWlyZSIsIlRoZW1lUHJvdmlkZXJfMSIsIkxvYWRpbmdTY3JlZW4iLCJtZXNzYWdlIiwiYiIsImYiLCJ0aGVtZSIsInVzZVRoZW1lIiwic3R5bGVzIiwiY3JlYXRlU3R5bGVzIiwianN4X3J1bnRpbWVfMSIsImpzeCIsIlZpZXciLCJzdHlsZSIsImNvbnRhaW5lciIsImNoaWxkcmVuIiwianN4cyIsImNvbnRlbnQiLCJUZXh0IiwiYXBwTmFtZSIsImxvYWRpbmdJbmRpY2F0b3IiLCJBY3Rpdml0eUluZGljYXRvciIsInNpemUiLCJjb2xvciIsImNvbG9ycyIsInByaW1hcnkiLCJsb2FkaW5nVGV4dCIsImV4cG9ydHMiLCJTdHlsZVNoZWV0IiwiY3JlYXRlIiwiZmxleCIsImJhY2tncm91bmRDb2xvciIsImJhY2tncm91bmQiLCJhbGlnbkl0ZW1zIiwianVzdGlmeUNvbnRlbnQiLCJwYWRkaW5nSG9yaXpvbnRhbCIsInNwYWNpbmciLCJmb250U2l6ZSIsImZvbnRXZWlnaHQiLCJib2xkIiwidGV4dCIsIm1hcmdpbkJvdHRvbSIsInRleHRBbGlnbiIsImdhcCIsImJhc2UiLCJ0ZXh0U2Vjb25kYXJ5IiwiZGVmYXVsdCJdLCJzb3VyY2VzIjpbIi9Vc2Vycy95YW5pdmhhZGFyL0Rlc2t0b3AvV2hpdGUgTm9pc2UgQWxhcm0vQWxhcm1XaGl0ZU5vaXNlQXBwL3NyYy9jb21wb25lbnRzL3VpL0xvYWRpbmdTY3JlZW4udHN4Il0sInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogTG9hZGluZyBTY3JlZW4gQ29tcG9uZW50XG4gKiBcbiAqIEZ1bGwtc2NyZWVuIGxvYWRpbmcgaW5kaWNhdG9yIHNob3duIGR1cmluZ1xuICogYXV0aGVudGljYXRpb24gaW5pdGlhbGl6YXRpb24gYW5kIGFwcCBzdGFydHVwLlxuICovXG5cbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgeyBWaWV3LCBUZXh0LCBBY3Rpdml0eUluZGljYXRvciwgU3R5bGVTaGVldCB9IGZyb20gJ3JlYWN0LW5hdGl2ZSc7XG5pbXBvcnQgeyB1c2VUaGVtZSB9IGZyb20gJy4uL3Byb3ZpZGVycy9UaGVtZVByb3ZpZGVyJztcblxuaW50ZXJmYWNlIExvYWRpbmdTY3JlZW5Qcm9wcyB7XG4gIG1lc3NhZ2U/OiBzdHJpbmc7XG59XG5cbmV4cG9ydCBjb25zdCBMb2FkaW5nU2NyZWVuOiBSZWFjdC5GQzxMb2FkaW5nU2NyZWVuUHJvcHM+ID0gKHsgXG4gIG1lc3NhZ2UgPSBcIkxvYWRpbmcuLi5cIiBcbn0pID0+IHtcbiAgY29uc3QgeyB0aGVtZSB9ID0gdXNlVGhlbWUoKTtcblxuICBjb25zdCBzdHlsZXMgPSBjcmVhdGVTdHlsZXModGhlbWUpO1xuXG4gIHJldHVybiAoXG4gICAgPFZpZXcgc3R5bGU9e3N0eWxlcy5jb250YWluZXJ9PlxuICAgICAgPFZpZXcgc3R5bGU9e3N0eWxlcy5jb250ZW50fT5cbiAgICAgICAgey8qIEFwcCBMb2dvL0ljb24gY291bGQgZ28gaGVyZSAqL31cbiAgICAgICAgPFRleHQgc3R5bGU9e3N0eWxlcy5hcHBOYW1lfT5BbGFybSAmIFdoaXRlIE5vaXNlPC9UZXh0PlxuICAgICAgICBcbiAgICAgICAgPFZpZXcgc3R5bGU9e3N0eWxlcy5sb2FkaW5nSW5kaWNhdG9yfT5cbiAgICAgICAgICA8QWN0aXZpdHlJbmRpY2F0b3IgXG4gICAgICAgICAgICBzaXplPVwibGFyZ2VcIiBcbiAgICAgICAgICAgIGNvbG9yPXt0aGVtZS5jb2xvcnMucHJpbWFyeX0gXG4gICAgICAgICAgLz5cbiAgICAgICAgICA8VGV4dCBzdHlsZT17c3R5bGVzLmxvYWRpbmdUZXh0fT57bWVzc2FnZX08L1RleHQ+XG4gICAgICAgIDwvVmlldz5cbiAgICAgIDwvVmlldz5cbiAgICA8L1ZpZXc+XG4gICk7XG59O1xuXG5jb25zdCBjcmVhdGVTdHlsZXMgPSAodGhlbWU6IGFueSkgPT4gU3R5bGVTaGVldC5jcmVhdGUoe1xuICBjb250YWluZXI6IHtcbiAgICBmbGV4OiAxLFxuICAgIGJhY2tncm91bmRDb2xvcjogdGhlbWUuY29sb3JzLmJhY2tncm91bmQsXG4gICAgYWxpZ25JdGVtczogJ2NlbnRlcicsXG4gICAganVzdGlmeUNvbnRlbnQ6ICdjZW50ZXInLFxuICB9LFxuICBjb250ZW50OiB7XG4gICAgYWxpZ25JdGVtczogJ2NlbnRlcicsXG4gICAgcGFkZGluZ0hvcml6b250YWw6IHRoZW1lLnNwYWNpbmdbOF0sXG4gIH0sXG4gIGFwcE5hbWU6IHtcbiAgICBmb250U2l6ZTogdGhlbWUuZm9udFNpemVbJzJ4bCddLFxuICAgIGZvbnRXZWlnaHQ6IHRoZW1lLmZvbnRXZWlnaHQuYm9sZCxcbiAgICBjb2xvcjogdGhlbWUuY29sb3JzLnRleHQsXG4gICAgbWFyZ2luQm90dG9tOiB0aGVtZS5zcGFjaW5nWzEyXSxcbiAgICB0ZXh0QWxpZ246ICdjZW50ZXInLFxuICB9LFxuICBsb2FkaW5nSW5kaWNhdG9yOiB7XG4gICAgYWxpZ25JdGVtczogJ2NlbnRlcicsXG4gICAgZ2FwOiB0aGVtZS5zcGFjaW5nWzRdLFxuICB9LFxuICBsb2FkaW5nVGV4dDoge1xuICAgIGZvbnRTaXplOiB0aGVtZS5mb250U2l6ZS5iYXNlLFxuICAgIGNvbG9yOiB0aGVtZS5jb2xvcnMudGV4dFNlY29uZGFyeSxcbiAgICB0ZXh0QWxpZ246ICdjZW50ZXInLFxuICB9LFxufSk7XG5cbmV4cG9ydCBkZWZhdWx0IExvYWRpbmdTY3JlZW47Il0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztJQTJDSTtJQUFBQSxjQUFBLFlBQUFBLENBQUE7TUFBQSxPQUFBQyxjQUFBO0lBQUE7RUFBQTtFQUFBLE9BQUFBLGNBQUE7QUFBQTtBQUFBRCxjQUFBO0FBQUFBLGNBQUEsR0FBQUUsQ0FBQTs7Ozs7Ozs7OztBQW5DSixNQUFBQyxjQUFBO0FBQUE7QUFBQSxDQUFBSCxjQUFBLEdBQUFFLENBQUEsT0FBQUUsT0FBQTtBQUNBLE1BQUFDLGVBQUE7QUFBQTtBQUFBLENBQUFMLGNBQUEsR0FBQUUsQ0FBQSxPQUFBRSxPQUFBO0FBQXNEO0FBQUFKLGNBQUEsR0FBQUUsQ0FBQTtBQU0vQyxNQUFNSSxhQUFhLEdBQWlDQSxDQUFDO0VBQzFEQyxPQUFPO0VBQUE7RUFBQSxDQUFBUCxjQUFBLEdBQUFRLENBQUEsVUFBRyxZQUFZO0FBQUEsQ0FDdkIsS0FBSTtFQUFBO0VBQUFSLGNBQUEsR0FBQVMsQ0FBQTtFQUNILE1BQU07SUFBRUM7RUFBSyxDQUFFO0VBQUE7RUFBQSxDQUFBVixjQUFBLEdBQUFFLENBQUEsT0FBRyxJQUFBRyxlQUFBLENBQUFNLFFBQVEsR0FBRTtFQUU1QixNQUFNQyxNQUFNO0VBQUE7RUFBQSxDQUFBWixjQUFBLEdBQUFFLENBQUEsT0FBR1csWUFBWSxDQUFDSCxLQUFLLENBQUM7RUFBQztFQUFBVixjQUFBLEdBQUFFLENBQUE7RUFFbkMsT0FDRSxJQUFBWSxhQUFBLENBQUFDLEdBQUEsRUFBQ1osY0FBQSxDQUFBYSxJQUFJO0lBQUNDLEtBQUssRUFBRUwsTUFBTSxDQUFDTSxTQUFTO0lBQUFDLFFBQUEsRUFDM0IsSUFBQUwsYUFBQSxDQUFBTSxJQUFBLEVBQUNqQixjQUFBLENBQUFhLElBQUk7TUFBQ0MsS0FBSyxFQUFFTCxNQUFNLENBQUNTLE9BQU87TUFBQUYsUUFBQSxHQUV6QixJQUFBTCxhQUFBLENBQUFDLEdBQUEsRUFBQ1osY0FBQSxDQUFBbUIsSUFBSTtRQUFDTCxLQUFLLEVBQUVMLE1BQU0sQ0FBQ1csT0FBTztRQUFBSixRQUFBO01BQUEsRUFBNEIsRUFFdkQsSUFBQUwsYUFBQSxDQUFBTSxJQUFBLEVBQUNqQixjQUFBLENBQUFhLElBQUk7UUFBQ0MsS0FBSyxFQUFFTCxNQUFNLENBQUNZLGdCQUFnQjtRQUFBTCxRQUFBLEdBQ2xDLElBQUFMLGFBQUEsQ0FBQUMsR0FBQSxFQUFDWixjQUFBLENBQUFzQixpQkFBaUI7VUFDaEJDLElBQUksRUFBQyxPQUFPO1VBQ1pDLEtBQUssRUFBRWpCLEtBQUssQ0FBQ2tCLE1BQU0sQ0FBQ0M7UUFBTyxFQUMzQixFQUNGLElBQUFmLGFBQUEsQ0FBQUMsR0FBQSxFQUFDWixjQUFBLENBQUFtQixJQUFJO1VBQUNMLEtBQUssRUFBRUwsTUFBTSxDQUFDa0IsV0FBVztVQUFBWCxRQUFBLEVBQUdaO1FBQU8sRUFBUTtNQUFBLEVBQzVDO0lBQUE7RUFDRixFQUNGO0FBRVgsQ0FBQztBQUFDO0FBQUFQLGNBQUEsR0FBQUUsQ0FBQTtBQXZCVzZCLE9BQUEsQ0FBQXpCLGFBQWEsR0FBQUEsYUFBQTtBQXVCeEI7QUFBQU4sY0FBQSxHQUFBRSxDQUFBO0FBRUYsTUFBTVcsWUFBWSxHQUFJSCxLQUFVLElBQUs7RUFBQTtFQUFBVixjQUFBLEdBQUFTLENBQUE7RUFBQVQsY0FBQSxHQUFBRSxDQUFBO0VBQUEsT0FBQUMsY0FBQSxDQUFBNkIsVUFBVSxDQUFDQyxNQUFNLENBQUM7SUFDckRmLFNBQVMsRUFBRTtNQUNUZ0IsSUFBSSxFQUFFLENBQUM7TUFDUEMsZUFBZSxFQUFFekIsS0FBSyxDQUFDa0IsTUFBTSxDQUFDUSxVQUFVO01BQ3hDQyxVQUFVLEVBQUUsUUFBUTtNQUNwQkMsY0FBYyxFQUFFO0tBQ2pCO0lBQ0RqQixPQUFPLEVBQUU7TUFDUGdCLFVBQVUsRUFBRSxRQUFRO01BQ3BCRSxpQkFBaUIsRUFBRTdCLEtBQUssQ0FBQzhCLE9BQU8sQ0FBQyxDQUFDO0tBQ25DO0lBQ0RqQixPQUFPLEVBQUU7TUFDUGtCLFFBQVEsRUFBRS9CLEtBQUssQ0FBQytCLFFBQVEsQ0FBQyxLQUFLLENBQUM7TUFDL0JDLFVBQVUsRUFBRWhDLEtBQUssQ0FBQ2dDLFVBQVUsQ0FBQ0MsSUFBSTtNQUNqQ2hCLEtBQUssRUFBRWpCLEtBQUssQ0FBQ2tCLE1BQU0sQ0FBQ2dCLElBQUk7TUFDeEJDLFlBQVksRUFBRW5DLEtBQUssQ0FBQzhCLE9BQU8sQ0FBQyxFQUFFLENBQUM7TUFDL0JNLFNBQVMsRUFBRTtLQUNaO0lBQ0R0QixnQkFBZ0IsRUFBRTtNQUNoQmEsVUFBVSxFQUFFLFFBQVE7TUFDcEJVLEdBQUcsRUFBRXJDLEtBQUssQ0FBQzhCLE9BQU8sQ0FBQyxDQUFDO0tBQ3JCO0lBQ0RWLFdBQVcsRUFBRTtNQUNYVyxRQUFRLEVBQUUvQixLQUFLLENBQUMrQixRQUFRLENBQUNPLElBQUk7TUFDN0JyQixLQUFLLEVBQUVqQixLQUFLLENBQUNrQixNQUFNLENBQUNxQixhQUFhO01BQ2pDSCxTQUFTLEVBQUU7O0dBRWQsQ0FBQztBQUFELENBQUM7QUFBQztBQUFBOUMsY0FBQSxHQUFBRSxDQUFBO0FBRUg2QixPQUFBLENBQUFtQixPQUFBLEdBQWVuQixPQUFBLENBQUF6QixhQUFhIiwiaWdub3JlTGlzdCI6W119

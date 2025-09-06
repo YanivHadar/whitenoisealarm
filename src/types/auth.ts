@@ -283,12 +283,28 @@ export interface AuthError {
 /**
  * Validation utility functions
  */
+// Create separate schemas for individual field validation
+const EmailSchema = z
+  .string()
+  .min(1, 'Email is required')
+  .email('Please enter a valid email address')
+  .max(255, 'Email is too long');
+
+const PasswordSchema = z
+  .string()
+  .min(8, 'Password must be at least 8 characters')
+  .max(128, 'Password is too long')
+  .regex(
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/,
+    'Password must contain at least one lowercase letter, one uppercase letter, and one number'
+  );
+
 export const validateEmail = (email: string): boolean => {
-  return SignInSchema.shape.email.safeParse(email).success;
+  return EmailSchema.safeParse(email).success;
 };
 
 export const validatePassword = (password: string): { isValid: boolean; errors: string[] } => {
-  const result = SignUpSchema.shape.password.safeParse(password);
+  const result = PasswordSchema.safeParse(password);
   
   if (result.success) {
     return { isValid: true, errors: [] };
@@ -296,7 +312,7 @@ export const validatePassword = (password: string): { isValid: boolean; errors: 
   
   return {
     isValid: false,
-    errors: result.error.errors.map(err => err.message),
+    errors: result.error.issues.map((err: any) => err.message),
   };
 };
 

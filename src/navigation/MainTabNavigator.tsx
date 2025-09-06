@@ -6,6 +6,7 @@
  */
 
 import React from 'react';
+import { View, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../components/providers/ThemeProvider';
@@ -15,6 +16,9 @@ import { MainTabParamList } from '../types/navigation';
 import { AlarmNavigator } from './AlarmNavigator';
 import { WhiteNoiseNavigator } from './WhiteNoiseNavigator';
 import { SettingsNavigator } from './SettingsNavigator';
+
+// Import components
+import { FloatingSessionMonitor } from '../components/FloatingSessionMonitor';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
@@ -34,7 +38,7 @@ export const MainTabNavigator: React.FC = () => {
     tabBarInactiveTintColor: theme.colors.textSecondary,
     tabBarLabelStyle: {
       fontSize: 12,
-      fontWeight: theme.fontWeight.medium,
+      fontWeight: theme.typography.fontWeight.medium,
       marginTop: 4,
     },
     headerShown: false,
@@ -61,42 +65,53 @@ export const MainTabNavigator: React.FC = () => {
   };
 
   return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        ...tabBarOptions,
-        tabBarIcon: ({ focused, color, size }) =>
-          getTabBarIcon(route.name, focused, color, size),
-        // Accessibility
-        tabBarAccessibilityLabel: `${route.name} tab`,
-        tabBarTestID: `tab-${route.name.toLowerCase()}`,
-      })}
-    >
-      <Tab.Screen
-        name="Alarms"
-        component={AlarmNavigator}
-        options={{
-          tabBarLabel: 'Alarms',
-          tabBarBadge: undefined, // Can be used for active alarm count
-        }}
-      />
+    <View style={styles.container}>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          ...tabBarOptions,
+          tabBarIcon: ({ focused, color, size }) =>
+            getTabBarIcon(route.name, focused, color, size),
+          // Accessibility
+          tabBarAccessibilityLabel: `${route.name} tab`,
+          tabBarTestID: `tab-${route.name.toLowerCase()}`,
+        })}
+      >
+        <Tab.Screen
+          name="Alarms"
+          component={AlarmNavigator}
+          options={{
+            tabBarLabel: 'Alarms',
+            tabBarBadge: undefined, // Can be used for active alarm count
+          }}
+        />
 
-      <Tab.Screen
-        name="WhiteNoise"
-        component={WhiteNoiseNavigator}
-        options={{
-          tabBarLabel: 'White Noise',
-        }}
-      />
+        <Tab.Screen
+          name="WhiteNoise"
+          component={WhiteNoiseNavigator}
+          options={{
+            tabBarLabel: 'White Noise',
+          }}
+        />
 
-      <Tab.Screen
-        name="Settings"
-        component={SettingsNavigator}
-        options={{
-          tabBarLabel: 'Settings',
-        }}
-      />
-    </Tab.Navigator>
+        <Tab.Screen
+          name="Settings"
+          component={SettingsNavigator}
+          options={{
+            tabBarLabel: 'Settings',
+          }}
+        />
+      </Tab.Navigator>
+
+      {/* Floating Session Monitor - appears across all tabs */}
+      <FloatingSessionMonitor />
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default MainTabNavigator;

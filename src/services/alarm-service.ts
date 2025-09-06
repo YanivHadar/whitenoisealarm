@@ -42,7 +42,7 @@ import {
   validatePremiumFeature,
   extractValidationErrors 
 } from '../types/alarm-validation';
-import { v4 as uuidv4 } from 'uuid';
+import uuid from 'react-native-uuid';
 
 /**
  * Enhanced Alarm Service with comprehensive scheduling and state management
@@ -92,7 +92,7 @@ export class EnhancedAlarmService {
 
       // Convert form data to database insert format
       const insertData: AlarmInsert = {
-        id: uuidv4(),
+        id: uuid.v4() as string,
         user_id: userId,
         name: formValidation.data.name,
         time: formValidation.data.time,

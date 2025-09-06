@@ -1,0 +1,286 @@
+4f8e8bf73296395e0308d1c05de3df17
+"use strict";
+
+/* istanbul ignore next */
+function cov_206xvcr3mg() {
+  var path = "/Users/yanivhadar/Desktop/White Noise Alarm/AlarmWhiteNoiseApp/src/navigation/SettingsNavigator.tsx";
+  var hash = "5eebf041b377c2f5e61dec9e6b8dd662a9cdb5ed";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/yanivhadar/Desktop/White Noise Alarm/AlarmWhiteNoiseApp/src/navigation/SettingsNavigator.tsx",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 35
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 22
+        },
+        end: {
+          line: 4,
+          column: 50
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 16
+        },
+        end: {
+          line: 5,
+          column: 50
+        }
+      },
+      "4": {
+        start: {
+          line: 6,
+          column: 24
+        },
+        end: {
+          line: 6,
+          column: 72
+        }
+      },
+      "5": {
+        start: {
+          line: 8,
+          column: 29
+        },
+        end: {
+          line: 8,
+          column: 78
+        }
+      },
+      "6": {
+        start: {
+          line: 9,
+          column: 14
+        },
+        end: {
+          line: 9,
+          column: 49
+        }
+      },
+      "7": {
+        start: {
+          line: 10,
+          column: 26
+        },
+        end: {
+          line: 31,
+          column: 1
+        }
+      },
+      "8": {
+        start: {
+          line: 11,
+          column: 22
+        },
+        end: {
+          line: 11,
+          column: 53
+        }
+      },
+      "9": {
+        start: {
+          line: 12,
+          column: 26
+        },
+        end: {
+          line: 27,
+          column: 5
+        }
+      },
+      "10": {
+        start: {
+          line: 28,
+          column: 4
+        },
+        end: {
+          line: 30,
+          column: 21
+        }
+      },
+      "11": {
+        start: {
+          line: 32,
+          column: 0
+        },
+        end: {
+          line: 32,
+          column: 46
+        }
+      },
+      "12": {
+        start: {
+          line: 33,
+          column: 0
+        },
+        end: {
+          line: 33,
+          column: 44
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 10,
+            column: 26
+          },
+          end: {
+            line: 10,
+            column: 27
+          }
+        },
+        loc: {
+          start: {
+            line: 10,
+            column: 32
+          },
+          end: {
+            line: 31,
+            column: 1
+          }
+        },
+        line: 10
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "/Users/yanivhadar/Desktop/White Noise Alarm/AlarmWhiteNoiseApp/src/navigation/SettingsNavigator.tsx",
+      mappings: ";;;;AAQA,mDAA+D;AAC/D,yEAAiE;AAGjE,iBAAiB;AACjB,+EAA4E;AAE5E,MAAM,KAAK,GAAG,IAAA,4BAAoB,GAA0B,CAAC;AAEtD,MAAM,iBAAiB,GAAa,GAAG,EAAE;IAC9C,MAAM,EAAE,KAAK,EAAE,GAAG,IAAA,wBAAQ,GAAE,CAAC;IAE7B,MAAM,aAAa,GAAG;QACpB,WAAW,EAAE;YACX,eAAe,EAAE,KAAK,CAAC,MAAM,CAAC,OAAO;YACrC,WAAW,EAAE,KAAK,CAAC,MAAM,CAAC,MAAM;YAChC,SAAS,EAAE,CAAC;SACb;QACD,eAAe,EAAE,KAAK,CAAC,MAAM,CAAC,IAAI;QAClC,gBAAgB,EAAE;YAChB,UAAU,EAAE,KAAK,CAAC,UAAU,CAAC,UAAU,CAAC,QAAQ;YAChD,QAAQ,EAAE,KAAK,CAAC,UAAU,CAAC,KAAK,CAAC,EAAE;SACpC;QACD,sBAAsB,EAAE,KAAK;QAC7B,SAAS,EAAE;YACT,eAAe,EAAE,KAAK,CAAC,MAAM,CAAC,UAAU;SACzC;KACF,CAAC;IAEF,OAAO,CACL,uBAAC,KAAK,CAAC,SAAS,IACd,aAAa,EAAE,aAAa,EAC5B,gBAAgB,EAAC,cAAc,YAE/B,uBAAC,KAAK,CAAC,MAAM,IACX,IAAI,EAAC,cAAc,EACnB,SAAS,EAAE,uCAAkB,EAC7B,OAAO,EAAE;gBACP,WAAW,EAAE,KAAK,EAAE,6BAA6B;aAClD,GACD,GACc,CACnB,CAAC;AACJ,CAAC,CAAC;AAlCW,QAAA,iBAAiB,qBAkC5B;AAEF,kBAAe,yBAAiB,CAAC",
+      names: [],
+      sources: ["/Users/yanivhadar/Desktop/White Noise Alarm/AlarmWhiteNoiseApp/src/navigation/SettingsNavigator.tsx"],
+      sourcesContent: ["/**\n * Settings Navigator\n * \n * Stack navigator for settings and configuration screens\n * including account, preferences, and app settings.\n */\n\nimport React from 'react';\nimport { createStackNavigator } from '@react-navigation/stack';\nimport { useTheme } from '../components/providers/ThemeProvider';\nimport { SettingsStackParamList } from '../types/navigation';\n\n// Import screens\nimport { SettingsHomeScreen } from '../screens/settings/SettingsHomeScreen';\n\nconst Stack = createStackNavigator<SettingsStackParamList>();\n\nexport const SettingsNavigator: React.FC = () => {\n  const { theme } = useTheme();\n\n  const screenOptions = {\n    headerStyle: {\n      backgroundColor: theme.colors.surface,\n      shadowColor: theme.colors.border,\n      elevation: 1,\n    },\n    headerTintColor: theme.colors.text,\n    headerTitleStyle: {\n      fontWeight: theme.typography.fontWeight.semibold,\n      fontSize: theme.typography.sizes.lg,\n    },\n    headerBackTitleVisible: false,\n    cardStyle: {\n      backgroundColor: theme.colors.background,\n    },\n  };\n\n  return (\n    <Stack.Navigator\n      screenOptions={screenOptions}\n      initialRouteName=\"SettingsHome\"\n    >\n      <Stack.Screen\n        name=\"SettingsHome\"\n        component={SettingsHomeScreen}\n        options={{\n          headerShown: false, // Custom header in component\n        }}\n      />\n    </Stack.Navigator>\n  );\n};\n\nexport default SettingsNavigator;"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "5eebf041b377c2f5e61dec9e6b8dd662a9cdb5ed"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_206xvcr3mg = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+cov_206xvcr3mg();
+cov_206xvcr3mg().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* istanbul ignore next */
+cov_206xvcr3mg().s[1]++;
+exports.SettingsNavigator = void 0;
+const jsx_runtime_1 =
+/* istanbul ignore next */
+(cov_206xvcr3mg().s[2]++, require("react/jsx-runtime"));
+const stack_1 =
+/* istanbul ignore next */
+(cov_206xvcr3mg().s[3]++, require("@react-navigation/stack"));
+const ThemeProvider_1 =
+/* istanbul ignore next */
+(cov_206xvcr3mg().s[4]++, require("../components/providers/ThemeProvider"));
+// Import screens
+const SettingsHomeScreen_1 =
+/* istanbul ignore next */
+(cov_206xvcr3mg().s[5]++, require("../screens/settings/SettingsHomeScreen"));
+const Stack =
+/* istanbul ignore next */
+(cov_206xvcr3mg().s[6]++, (0, stack_1.createStackNavigator)());
+/* istanbul ignore next */
+cov_206xvcr3mg().s[7]++;
+const SettingsNavigator = () => {
+  /* istanbul ignore next */
+  cov_206xvcr3mg().f[0]++;
+  const {
+    theme
+  } =
+  /* istanbul ignore next */
+  (cov_206xvcr3mg().s[8]++, (0, ThemeProvider_1.useTheme)());
+  const screenOptions =
+  /* istanbul ignore next */
+  (cov_206xvcr3mg().s[9]++, {
+    headerStyle: {
+      backgroundColor: theme.colors.surface,
+      shadowColor: theme.colors.border,
+      elevation: 1
+    },
+    headerTintColor: theme.colors.text,
+    headerTitleStyle: {
+      fontWeight: theme.typography.fontWeight.semibold,
+      fontSize: theme.typography.sizes.lg
+    },
+    headerBackTitleVisible: false,
+    cardStyle: {
+      backgroundColor: theme.colors.background
+    }
+  });
+  /* istanbul ignore next */
+  cov_206xvcr3mg().s[10]++;
+  return (0, jsx_runtime_1.jsx)(Stack.Navigator, {
+    screenOptions: screenOptions,
+    initialRouteName: "SettingsHome",
+    children: (0, jsx_runtime_1.jsx)(Stack.Screen, {
+      name: "SettingsHome",
+      component: SettingsHomeScreen_1.SettingsHomeScreen,
+      options: {
+        headerShown: false // Custom header in component
+      }
+    })
+  });
+};
+/* istanbul ignore next */
+cov_206xvcr3mg().s[11]++;
+exports.SettingsNavigator = SettingsNavigator;
+/* istanbul ignore next */
+cov_206xvcr3mg().s[12]++;
+exports.default = exports.SettingsNavigator;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJjb3ZfMjA2eHZjcjNtZyIsImFjdHVhbENvdmVyYWdlIiwicyIsInN0YWNrXzEiLCJyZXF1aXJlIiwiVGhlbWVQcm92aWRlcl8xIiwiU2V0dGluZ3NIb21lU2NyZWVuXzEiLCJTdGFjayIsImNyZWF0ZVN0YWNrTmF2aWdhdG9yIiwiU2V0dGluZ3NOYXZpZ2F0b3IiLCJmIiwidGhlbWUiLCJ1c2VUaGVtZSIsInNjcmVlbk9wdGlvbnMiLCJoZWFkZXJTdHlsZSIsImJhY2tncm91bmRDb2xvciIsImNvbG9ycyIsInN1cmZhY2UiLCJzaGFkb3dDb2xvciIsImJvcmRlciIsImVsZXZhdGlvbiIsImhlYWRlclRpbnRDb2xvciIsInRleHQiLCJoZWFkZXJUaXRsZVN0eWxlIiwiZm9udFdlaWdodCIsInR5cG9ncmFwaHkiLCJzZW1pYm9sZCIsImZvbnRTaXplIiwic2l6ZXMiLCJsZyIsImhlYWRlckJhY2tUaXRsZVZpc2libGUiLCJjYXJkU3R5bGUiLCJiYWNrZ3JvdW5kIiwianN4X3J1bnRpbWVfMSIsImpzeCIsIk5hdmlnYXRvciIsImluaXRpYWxSb3V0ZU5hbWUiLCJjaGlsZHJlbiIsIlNjcmVlbiIsIm5hbWUiLCJjb21wb25lbnQiLCJTZXR0aW5nc0hvbWVTY3JlZW4iLCJvcHRpb25zIiwiaGVhZGVyU2hvd24iLCJleHBvcnRzIiwiZGVmYXVsdCJdLCJzb3VyY2VzIjpbIi9Vc2Vycy95YW5pdmhhZGFyL0Rlc2t0b3AvV2hpdGUgTm9pc2UgQWxhcm0vQWxhcm1XaGl0ZU5vaXNlQXBwL3NyYy9uYXZpZ2F0aW9uL1NldHRpbmdzTmF2aWdhdG9yLnRzeCJdLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIFNldHRpbmdzIE5hdmlnYXRvclxuICogXG4gKiBTdGFjayBuYXZpZ2F0b3IgZm9yIHNldHRpbmdzIGFuZCBjb25maWd1cmF0aW9uIHNjcmVlbnNcbiAqIGluY2x1ZGluZyBhY2NvdW50LCBwcmVmZXJlbmNlcywgYW5kIGFwcCBzZXR0aW5ncy5cbiAqL1xuXG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgY3JlYXRlU3RhY2tOYXZpZ2F0b3IgfSBmcm9tICdAcmVhY3QtbmF2aWdhdGlvbi9zdGFjayc7XG5pbXBvcnQgeyB1c2VUaGVtZSB9IGZyb20gJy4uL2NvbXBvbmVudHMvcHJvdmlkZXJzL1RoZW1lUHJvdmlkZXInO1xuaW1wb3J0IHsgU2V0dGluZ3NTdGFja1BhcmFtTGlzdCB9IGZyb20gJy4uL3R5cGVzL25hdmlnYXRpb24nO1xuXG4vLyBJbXBvcnQgc2NyZWVuc1xuaW1wb3J0IHsgU2V0dGluZ3NIb21lU2NyZWVuIH0gZnJvbSAnLi4vc2NyZWVucy9zZXR0aW5ncy9TZXR0aW5nc0hvbWVTY3JlZW4nO1xuXG5jb25zdCBTdGFjayA9IGNyZWF0ZVN0YWNrTmF2aWdhdG9yPFNldHRpbmdzU3RhY2tQYXJhbUxpc3Q+KCk7XG5cbmV4cG9ydCBjb25zdCBTZXR0aW5nc05hdmlnYXRvcjogUmVhY3QuRkMgPSAoKSA9PiB7XG4gIGNvbnN0IHsgdGhlbWUgfSA9IHVzZVRoZW1lKCk7XG5cbiAgY29uc3Qgc2NyZWVuT3B0aW9ucyA9IHtcbiAgICBoZWFkZXJTdHlsZToge1xuICAgICAgYmFja2dyb3VuZENvbG9yOiB0aGVtZS5jb2xvcnMuc3VyZmFjZSxcbiAgICAgIHNoYWRvd0NvbG9yOiB0aGVtZS5jb2xvcnMuYm9yZGVyLFxuICAgICAgZWxldmF0aW9uOiAxLFxuICAgIH0sXG4gICAgaGVhZGVyVGludENvbG9yOiB0aGVtZS5jb2xvcnMudGV4dCxcbiAgICBoZWFkZXJUaXRsZVN0eWxlOiB7XG4gICAgICBmb250V2VpZ2h0OiB0aGVtZS50eXBvZ3JhcGh5LmZvbnRXZWlnaHQuc2VtaWJvbGQsXG4gICAgICBmb250U2l6ZTogdGhlbWUudHlwb2dyYXBoeS5zaXplcy5sZyxcbiAgICB9LFxuICAgIGhlYWRlckJhY2tUaXRsZVZpc2libGU6IGZhbHNlLFxuICAgIGNhcmRTdHlsZToge1xuICAgICAgYmFja2dyb3VuZENvbG9yOiB0aGVtZS5jb2xvcnMuYmFja2dyb3VuZCxcbiAgICB9LFxuICB9O1xuXG4gIHJldHVybiAoXG4gICAgPFN0YWNrLk5hdmlnYXRvclxuICAgICAgc2NyZWVuT3B0aW9ucz17c2NyZWVuT3B0aW9uc31cbiAgICAgIGluaXRpYWxSb3V0ZU5hbWU9XCJTZXR0aW5nc0hvbWVcIlxuICAgID5cbiAgICAgIDxTdGFjay5TY3JlZW5cbiAgICAgICAgbmFtZT1cIlNldHRpbmdzSG9tZVwiXG4gICAgICAgIGNvbXBvbmVudD17U2V0dGluZ3NIb21lU2NyZWVufVxuICAgICAgICBvcHRpb25zPXt7XG4gICAgICAgICAgaGVhZGVyU2hvd246IGZhbHNlLCAvLyBDdXN0b20gaGVhZGVyIGluIGNvbXBvbmVudFxuICAgICAgICB9fVxuICAgICAgLz5cbiAgICA8L1N0YWNrLk5hdmlnYXRvcj5cbiAgKTtcbn07XG5cbmV4cG9ydCBkZWZhdWx0IFNldHRpbmdzTmF2aWdhdG9yOyJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztJQXdCTTtJQUFBQSxjQUFBLFlBQUFBLENBQUE7TUFBQSxPQUFBQyxjQUFBO0lBQUE7RUFBQTtFQUFBLE9BQUFBLGNBQUE7QUFBQTtBQUFBRCxjQUFBO0FBQUFBLGNBQUEsR0FBQUUsQ0FBQTs7Ozs7Ozs7OztBQWhCTixNQUFBQyxPQUFBO0FBQUE7QUFBQSxDQUFBSCxjQUFBLEdBQUFFLENBQUEsT0FBQUUsT0FBQTtBQUNBLE1BQUFDLGVBQUE7QUFBQTtBQUFBLENBQUFMLGNBQUEsR0FBQUUsQ0FBQSxPQUFBRSxPQUFBO0FBR0E7QUFDQSxNQUFBRSxvQkFBQTtBQUFBO0FBQUEsQ0FBQU4sY0FBQSxHQUFBRSxDQUFBLE9BQUFFLE9BQUE7QUFFQSxNQUFNRyxLQUFLO0FBQUE7QUFBQSxDQUFBUCxjQUFBLEdBQUFFLENBQUEsT0FBRyxJQUFBQyxPQUFBLENBQUFLLG9CQUFvQixHQUEwQjtBQUFDO0FBQUFSLGNBQUEsR0FBQUUsQ0FBQTtBQUV0RCxNQUFNTyxpQkFBaUIsR0FBYUEsQ0FBQSxLQUFLO0VBQUE7RUFBQVQsY0FBQSxHQUFBVSxDQUFBO0VBQzlDLE1BQU07SUFBRUM7RUFBSyxDQUFFO0VBQUE7RUFBQSxDQUFBWCxjQUFBLEdBQUFFLENBQUEsT0FBRyxJQUFBRyxlQUFBLENBQUFPLFFBQVEsR0FBRTtFQUU1QixNQUFNQyxhQUFhO0VBQUE7RUFBQSxDQUFBYixjQUFBLEdBQUFFLENBQUEsT0FBRztJQUNwQlksV0FBVyxFQUFFO01BQ1hDLGVBQWUsRUFBRUosS0FBSyxDQUFDSyxNQUFNLENBQUNDLE9BQU87TUFDckNDLFdBQVcsRUFBRVAsS0FBSyxDQUFDSyxNQUFNLENBQUNHLE1BQU07TUFDaENDLFNBQVMsRUFBRTtLQUNaO0lBQ0RDLGVBQWUsRUFBRVYsS0FBSyxDQUFDSyxNQUFNLENBQUNNLElBQUk7SUFDbENDLGdCQUFnQixFQUFFO01BQ2hCQyxVQUFVLEVBQUViLEtBQUssQ0FBQ2MsVUFBVSxDQUFDRCxVQUFVLENBQUNFLFFBQVE7TUFDaERDLFFBQVEsRUFBRWhCLEtBQUssQ0FBQ2MsVUFBVSxDQUFDRyxLQUFLLENBQUNDO0tBQ2xDO0lBQ0RDLHNCQUFzQixFQUFFLEtBQUs7SUFDN0JDLFNBQVMsRUFBRTtNQUNUaEIsZUFBZSxFQUFFSixLQUFLLENBQUNLLE1BQU0sQ0FBQ2dCOztHQUVqQztFQUFDO0VBQUFoQyxjQUFBLEdBQUFFLENBQUE7RUFFRixPQUNFLElBQUErQixhQUFBLENBQUFDLEdBQUEsRUFBQzNCLEtBQUssQ0FBQzRCLFNBQVM7SUFDZHRCLGFBQWEsRUFBRUEsYUFBYTtJQUM1QnVCLGdCQUFnQixFQUFDLGNBQWM7SUFBQUMsUUFBQSxFQUUvQixJQUFBSixhQUFBLENBQUFDLEdBQUEsRUFBQzNCLEtBQUssQ0FBQytCLE1BQU07TUFDWEMsSUFBSSxFQUFDLGNBQWM7TUFDbkJDLFNBQVMsRUFBRWxDLG9CQUFBLENBQUFtQyxrQkFBa0I7TUFDN0JDLE9BQU8sRUFBRTtRQUNQQyxXQUFXLEVBQUUsS0FBSyxDQUFFOztJQUNyQjtFQUNELEVBQ2M7QUFFdEIsQ0FBQztBQUFDO0FBQUEzQyxjQUFBLEdBQUFFLENBQUE7QUFsQ1cwQyxPQUFBLENBQUFuQyxpQkFBaUIsR0FBQUEsaUJBQUE7QUFrQzVCO0FBQUFULGNBQUEsR0FBQUUsQ0FBQTtBQUVGMEMsT0FBQSxDQUFBQyxPQUFBLEdBQWVELE9BQUEsQ0FBQW5DLGlCQUFpQiIsImlnbm9yZUxpc3QiOltdfQ==

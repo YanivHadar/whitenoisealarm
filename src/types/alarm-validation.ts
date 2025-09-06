@@ -18,15 +18,15 @@ import type {
 
 // Base validation schemas for enums
 export const AudioOutputSchema = z.enum(['speaker', 'headphones', 'auto'], {
-  errorMap: () => ({ message: 'Audio output must be speaker, headphones, or auto' })
+  message: 'Audio output must be speaker, headphones, or auto'
 });
 
 export const RepeatPatternSchema = z.enum(['none', 'daily', 'weekdays', 'weekends', 'custom'], {
-  errorMap: () => ({ message: 'Invalid repeat pattern' })
+  message: 'Invalid repeat pattern'
 });
 
 export const WhiteNoiseCategorySchema = z.enum(['nature', 'ambient', 'mechanical', 'binaural', 'custom'], {
-  errorMap: () => ({ message: 'Invalid white noise category' })
+  message: 'Invalid white noise category'
 });
 
 // Time validation schema
@@ -133,7 +133,7 @@ export const AlarmFormSchema = z.object({
         path: ['repeat_days']
       });
     }
-  } else if (data.repeat_pattern !== 'custom' && data.repeat_days?.length) {
+  } else if (['none', 'daily', 'weekdays', 'weekends'].includes(data.repeat_pattern) && data.repeat_days && data.repeat_days.length > 0) {
     ctx.addIssue({
       code: z.ZodIssueCode.custom,
       message: 'Repeat days should only be set for custom repeat pattern',
@@ -164,8 +164,28 @@ export const AlarmFormSchema = z.object({
 });
 
 // Alarm update schema (all fields optional except what's required)
-export const AlarmUpdateSchema = AlarmFormSchema.partial().extend({
+// Note: Cannot use .partial() on ZodEffects, so we recreate as needed
+export const AlarmUpdateSchema = z.object({
   id: z.string().uuid('Invalid alarm ID'),
+  name: AlarmNameSchema.optional(),
+  time: TimeSchema.optional(),
+  enabled: z.boolean().optional(),
+  repeat_pattern: RepeatPatternSchema.optional(),
+  repeat_days: RepeatDaysSchema.optional(),
+  audio_file_url: AudioUrlSchema.optional(),
+  audio_output: AudioOutputSchema.optional(),
+  volume: VolumeSchema.optional(),
+  vibration_enabled: z.boolean().optional(),
+  snooze_enabled: z.boolean().optional(),
+  snooze_duration: SnoozeDurationSchema.optional(),
+  snooze_count_limit: z.number().int().min(1).max(10).optional(),
+  white_noise_enabled: z.boolean().optional(),
+  white_noise_file_url: AudioUrlSchema.optional(),
+  white_noise_category: WhiteNoiseCategorySchema.nullable().optional(),
+  white_noise_volume: VolumeSchema.optional(),
+  white_noise_duration: WhiteNoiseDurationSchema.optional(),
+  fade_in_duration: FadeDurationSchema.optional(),
+  fade_out_duration: FadeDurationSchema.optional(),
 });
 
 // Alarm state validation schema
@@ -253,7 +273,7 @@ export const AlarmConfigSchema = z.object({
 // Bulk validation schemas for batch operations
 export const BulkAlarmUpdateSchema = z.object({
   alarm_ids: z.array(z.string().uuid()).min(1, 'At least one alarm ID required'),
-  updates: AlarmFormSchema.partial(),
+  updates: AlarmUpdateSchema.omit({ id: true }), // Reuse the manual partial schema
 });
 
 export const BulkAlarmDeleteSchema = z.object({
@@ -282,12 +302,15 @@ export const validateAlarmState = (data: unknown) => {
 };
 
 // Helper function to extract validation errors
-export const extractValidationErrors = (result: z.SafeParseError<any>) => {
-  return result.error.issues.map(issue => ({
-    field: issue.path.join('.'),
-    code: issue.code,
-    message: issue.message,
-  }));
+export const extractValidationErrors = (result: z.SafeParseReturnType<any, any>) => {
+  if (!result.success) {
+    return result.error.issues.map((issue: any) => ({
+      field: issue.path.join('.'),
+      code: issue.code,
+      message: issue.message,
+    }));
+  }
+  return [];
 };
 
 // Helper function to validate and sanitize alarm data

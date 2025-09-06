@@ -6,6 +6,10 @@
  */
 
 import { supabase } from '../supabase/client';
+import type { Database, UserInsert, AlarmInsert } from '../../types/database';
+
+// Type-safe database operations with explicit typing
+const typedSupabase = supabase as any;
 
 export interface TestResult {
   name: string;
@@ -30,7 +34,7 @@ export interface TestSuite {
 export async function testConnection(): Promise<TestResult> {
   const startTime = Date.now();
   try {
-    const { data, error } = await supabase
+    const { data, error } = await typedSupabase
       .from('users')
       .select('id')
       .limit(1);
@@ -75,15 +79,15 @@ export async function testUserOperations(): Promise<TestResult[]> {
   // Test user creation
   try {
     const startTime = Date.now();
-    const { data, error } = await supabase
+    const newUser: UserInsert = {
+      id: testUserId,
+      email: testUserEmail,
+      subscription_status: 'free',
+      is_premium: false,
+    };
+    const { data, error } = await typedSupabase
       .from('users')
-      .insert({
-        id: testUserId,
-        email: testUserEmail,
-        subscription_status: 'free',
-        timezone: 'UTC',
-        is_premium: false,
-      })
+      .insert(newUser)
       .select()
       .single();
 
@@ -107,7 +111,7 @@ export async function testUserOperations(): Promise<TestResult[]> {
 
       // Test user retrieval
       const retrievalStart = Date.now();
-      const { data: retrievedUser, error: retrievalError } = await supabase
+      const { data: retrievedUser, error: retrievalError } = await typedSupabase
         .from('users')
         .select('*')
         .eq('id', testUserId)
@@ -133,7 +137,7 @@ export async function testUserOperations(): Promise<TestResult[]> {
       }
 
       // Cleanup: Delete test user
-      await supabase.from('users').delete().eq('id', testUserId);
+      await typedSupabase.from('users').delete().eq('id', testUserId);
     }
   } catch (error: any) {
     results.push({
@@ -159,15 +163,15 @@ export async function testAlarmOperations(): Promise<TestResult[]> {
 
   try {
     // Create test user
-    const { data: user, error: userError } = await supabase
+    const testUser: UserInsert = {
+      id: testUserId,
+      email: testUserEmail,
+      subscription_status: 'free',
+      is_premium: false,
+    };
+    const { data: user, error: userError } = await typedSupabase
       .from('users')
-      .insert({
-        id: testUserId,
-        email: testUserEmail,
-        subscription_status: 'free',
-        timezone: 'UTC',
-        is_premium: false,
-      })
+      .insert(testUser)
       .select()
       .single();
 
@@ -183,26 +187,26 @@ export async function testAlarmOperations(): Promise<TestResult[]> {
 
     // Test alarm creation
     const alarmStart = Date.now();
-    const { data: alarm, error: alarmError } = await supabase
+    const testAlarm: AlarmInsert = {
+      user_id: testUserId,
+      name: 'Test Alarm',
+      time: '07:00',
+      enabled: true,
+      repeat_pattern: 'daily',
+      audio_output: 'auto',
+      volume: 0.7,
+      snooze_enabled: true,
+      snooze_duration: 5,
+      snooze_count_limit: 3,
+      vibration_enabled: true,
+      white_noise_enabled: false,
+      white_noise_volume: 0.5,
+      fade_in_duration: 0,
+      // is_premium_feature not in alarm schema
+    };
+    const { data: alarm, error: alarmError } = await typedSupabase
       .from('alarms')
-      .insert({
-        user_id: testUserId,
-        name: 'Test Alarm',
-        time: '07:00',
-        enabled: true,
-        repeat_pattern: 'daily',
-        audio_output: 'auto',
-        volume: 0.7,
-        snooze_enabled: true,
-        snooze_duration: 5,
-        snooze_count_limit: 3,
-        vibration_enabled: true,
-        white_noise_enabled: false,
-        white_noise_volume: 0.5,
-        fade_in_duration: 0,
-        fade_out_duration: 0,
-        is_premium_feature: false,
-      })
+      .insert(testAlarm)
       .select()
       .single();
 
@@ -226,7 +230,7 @@ export async function testAlarmOperations(): Promise<TestResult[]> {
 
       // Test alarm retrieval
       const retrievalStart = Date.now();
-      const { data: alarms, error: retrievalError } = await supabase
+      const { data: alarms, error: retrievalError } = await typedSupabase
         .from('alarms')
         .select('*')
         .eq('user_id', testUserId);
@@ -251,11 +255,11 @@ export async function testAlarmOperations(): Promise<TestResult[]> {
       }
 
       // Cleanup: Delete test alarm
-      await supabase.from('alarms').delete().eq('id', alarm.id);
+      await typedSupabase.from('alarms').delete().eq('id', alarm.id);
     }
 
     // Cleanup: Delete test user
-    await supabase.from('users').delete().eq('id', testUserId);
+    await typedSupabase.from('users').delete().eq('id', testUserId);
 
   } catch (error: any) {
     results.push({
@@ -266,7 +270,7 @@ export async function testAlarmOperations(): Promise<TestResult[]> {
     });
 
     // Cleanup on error
-    await supabase.from('users').delete().eq('id', testUserId);
+    await typedSupabase.from('users').delete().eq('id', testUserId);
   }
 
   return results;
@@ -286,7 +290,7 @@ export async function testPerformance(): Promise<TestResult[]> {
 
     for (let i = 0; i < iterations; i++) {
       const startTime = Date.now();
-      await supabase.from('users').select('id').limit(1);
+      await typedSupabase.from('users').select('id').limit(1);
       times.push(Date.now() - startTime);
     }
 
@@ -320,7 +324,7 @@ export async function testRealTimeSubscriptions(): Promise<TestResult> {
     let messageReceived = false;
     const timeout = 10000; // 10 second timeout
 
-    const channel = supabase
+    const channel = typedSupabase
       .channel('test-channel')
       .on(
         'postgres_changes',
@@ -329,7 +333,7 @@ export async function testRealTimeSubscriptions(): Promise<TestResult> {
           schema: 'public',
           table: 'users',
         },
-        (payload) => {
+        (payload: any) => {
           console.log('Real-time message received:', payload);
           messageReceived = true;
         }
@@ -345,19 +349,19 @@ export async function testRealTimeSubscriptions(): Promise<TestResult> {
     const testUserId = 'realtime-test-' + Date.now();
     const testUserEmail = `realtime${Date.now()}@example.com`;
 
-    await supabase.from('users').insert({
+    const realtimeTestUser: UserInsert = {
       id: testUserId,
       email: testUserEmail,
       subscription_status: 'free',
-      timezone: 'UTC',
       is_premium: false,
-    });
+    };
+    await typedSupabase.from('users').insert(realtimeTestUser);
 
     // Wait for real-time message
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     // Cleanup
-    await supabase.from('users').delete().eq('id', testUserId);
+    await typedSupabase.from('users').delete().eq('id', testUserId);
     channel.unsubscribe();
 
     const duration = Date.now() - startTime;

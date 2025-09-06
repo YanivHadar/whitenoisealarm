@@ -12,6 +12,10 @@ import { SettingsStackParamList } from '../types/navigation';
 
 // Import screens
 import { SettingsHomeScreen } from '../screens/settings/SettingsHomeScreen';
+import { SubscriptionScreen } from '../screens/settings/SubscriptionScreen';
+import { PurchaseConfirmationScreen } from '../screens/settings/PurchaseConfirmationScreen';
+import { SubscriptionSuccessScreen } from '../screens/settings/SubscriptionSuccessScreen';
+import { SubscriptionSettingsScreen } from '../screens/settings/SubscriptionSettingsScreen';
 
 const Stack = createStackNavigator<SettingsStackParamList>();
 
@@ -26,8 +30,8 @@ export const SettingsNavigator: React.FC = () => {
     },
     headerTintColor: theme.colors.text,
     headerTitleStyle: {
-      fontWeight: theme.fontWeight.semibold,
-      fontSize: theme.fontSize.lg,
+      fontWeight: theme.typography.fontWeight.semibold,
+      fontSize: theme.typography.sizes.lg,
     },
     headerBackTitleVisible: false,
     cardStyle: {
@@ -45,6 +49,42 @@ export const SettingsNavigator: React.FC = () => {
         component={SettingsHomeScreen}
         options={{
           headerShown: false, // Custom header in component
+        }}
+      />
+
+      <Stack.Screen
+        name="Subscription"
+        component={SubscriptionScreen}
+        options={{
+          title: 'Premium Subscription',
+          headerShown: true,
+        }}
+      />
+
+      <Stack.Screen
+        name="PurchaseConfirmation"
+        component={PurchaseConfirmationScreen}
+        options={{
+          title: 'Confirm Purchase',
+          headerShown: true,
+        }}
+      />
+
+      <Stack.Screen
+        name="SubscriptionSuccess"
+        component={SubscriptionSuccessScreen}
+        options={{
+          title: 'Welcome to Premium',
+          headerShown: false, // Custom header in component
+        }}
+      />
+
+      <Stack.Screen
+        name="SubscriptionSettings"
+        component={SubscriptionSettingsScreen}
+        options={{
+          title: 'Manage Subscription',
+          headerShown: true,
         }}
       />
     </Stack.Navigator>

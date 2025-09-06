@@ -10,8 +10,6 @@
     "scheme": "alarmwhitenoise",
     "platforms": ["ios", "android", "web"],
     "description": "Sleep optimization platform combining customizable alarms with white noise functionality for better sleep routines.",
-    "keywords": ["alarm", "white noise", "sleep", "wake up", "audio", "relaxation", "bedtime"],
-    "privacy": "public",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -86,11 +84,7 @@
         {
           "icon": "./assets/notification-icon.png",
           "color": "#1a1a2e",
-          "defaultChannel": "default",
-          "sounds": [
-            "./assets/audio/alarm1.mp3",
-            "./assets/audio/alarm2.mp3"
-          ]
+          "defaultChannel": "default"
         }
       ],
       [
@@ -109,17 +103,6 @@
         "expo-task-manager"
       ]
     ],
-    "hooks": {
-      "postPublish": [
-        {
-          "file": "sentry-expo/upload-sourcemaps",
-          "config": {
-            "organization": "alarm-white-noise",
-            "project": "alarm-white-noise-app"
-          }
-        }
-      ]
-    },
     "web": {
       "favicon": "./assets/favicon.png",
       "bundler": "metro"

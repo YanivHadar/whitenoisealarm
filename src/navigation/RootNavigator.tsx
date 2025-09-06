@@ -35,7 +35,6 @@ const RootStackNavigator: React.FC = () => {
       screenOptions={{
         headerShown: false,
         cardStyle: { backgroundColor: theme.colors.background },
-        animationEnabled: true,
         gestureEnabled: true,
       }}
     >
@@ -72,6 +71,24 @@ export const RootNavigator: React.FC = () => {
       text: theme.colors.text,
       border: theme.colors.border,
       notification: theme.colors.primary,
+    },
+    fonts: {
+      regular: {
+        fontFamily: theme.typography.fonts.regular,
+        fontWeight: 'normal' as const,
+      },
+      medium: {
+        fontFamily: theme.typography.fonts.medium,
+        fontWeight: '500' as const,
+      },
+      bold: {
+        fontFamily: theme.typography.fonts.bold,
+        fontWeight: 'bold' as const,
+      },
+      heavy: {
+        fontFamily: theme.typography.fonts.bold,
+        fontWeight: '800' as const,
+      },
     },
   };
 

@@ -278,16 +278,36 @@ export class SoundLibraryManager {
   }
 
   /**
-   * Initialize premium content manager
+   * Initialize premium content manager with RevenueCat integration
    */
   private async initializePremiumManager(subscriptionActive?: boolean): Promise<void> {
     try {
+      // Import RevenueCat subscription service
+      const { subscriptionService } = await import('./subscription-service');
+      
       if (subscriptionActive !== undefined) {
         this.premiumManager.isSubscriptionActive = subscriptionActive;
         this.premiumManager.subscriptionType = subscriptionActive ? 'premium' : 'free';
+      } else {
+        // Check actual subscription status with RevenueCat
+        try {
+          const subscriptionStatus = await subscriptionService.getSubscriptionStatus();
+          this.premiumManager.isSubscriptionActive = subscriptionStatus.isActive;
+          this.premiumManager.subscriptionType = subscriptionStatus.isPremium ? 'premium' : 'free';
+          this.premiumManager.trialPeriodActive = subscriptionStatus.isInTrial;
+          this.premiumManager.gracePeriodActive = subscriptionStatus.isInGracePeriod;
+          
+          if (subscriptionStatus.expiresAt) {
+            this.premiumManager.subscriptionExpiresAt = subscriptionStatus.expiresAt.getTime();
+          }
+        } catch (revenueCatError) {
+          console.warn('Failed to check RevenueCat subscription status:', revenueCatError);
+          // Default to free if RevenueCat check fails
+          this.premiumManager.isSubscriptionActive = false;
+          this.premiumManager.subscriptionType = 'free';
+        }
       }
 
-      // In a real implementation, this would check with RevenueCat
       this.premiumManager.lastSubscriptionCheck = Date.now();
 
       // Count premium sounds based on cache
@@ -361,12 +381,14 @@ export class SoundLibraryManager {
   }
 
   /**
-   * Fetch library data (mock implementation)
+   * Fetch library data with local asset files
    */
   private async fetchLibraryData(): Promise<{ sounds: SoundFile[], categories: SoundCategory[] }> {
-    // Mock data - in a real implementation, this would be a Supabase query
+    const Asset = require('expo-asset').Asset;
+    
     return {
       sounds: [
+        // Free Nature Sounds
         {
           id: 'rain-gentle',
           name: 'Gentle Rain',
@@ -374,16 +396,16 @@ export class SoundLibraryManager {
           subcategory: 'rain',
           description: 'Soft, gentle rain sounds for relaxation',
           duration: 3600, // 1 hour
-          fileUrl: 'https://example.com/sounds/rain-gentle.mp3',
-          localPath: null,
+          fileUrl: Asset.fromModule(require('../../assets/sounds/nature/rain-gentle.mp3')).uri,
+          localPath: Asset.fromModule(require('../../assets/sounds/nature/rain-gentle.mp3')).localUri,
           fileSize: 8500000, // ~8.5MB
           quality: 'high',
           sampleRate: 44100,
           bitrate: 192,
           format: 'mp3',
           isPremium: false,
-          isDownloaded: false,
-          downloadProgress: 0,
+          isDownloaded: true, // Local assets are pre-downloaded
+          downloadProgress: 100,
           metadata: {
             artist: 'Nature Sounds Studio',
             album: 'Rain Collection',
@@ -416,16 +438,16 @@ export class SoundLibraryManager {
           subcategory: 'water',
           description: 'Rhythmic ocean waves for deep sleep',
           duration: 3600,
-          fileUrl: 'https://example.com/sounds/ocean-waves.mp3',
-          localPath: null,
+          fileUrl: Asset.fromModule(require('../../assets/sounds/nature/ocean-waves.mp3')).uri,
+          localPath: Asset.fromModule(require('../../assets/sounds/nature/ocean-waves.mp3')).localUri,
           fileSize: 9200000, // ~9.2MB
           quality: 'high',
           sampleRate: 44100,
           bitrate: 192,
           format: 'mp3',
           isPremium: false,
-          isDownloaded: false,
-          downloadProgress: 0,
+          isDownloaded: true,
+          downloadProgress: 100,
           metadata: {
             artist: 'Ocean Sounds Co.',
             album: 'Coastal Collection',
@@ -452,22 +474,107 @@ export class SoundLibraryManager {
           }
         },
         {
-          id: 'forest-ambience-premium',
+          id: 'white-noise-classic',
+          name: 'Classic White Noise',
+          category: 'ambient',
+          subcategory: 'white-noise',
+          description: 'Pure white noise for blocking distractions',
+          duration: 3600,
+          fileUrl: Asset.fromModule(require('../../assets/sounds/ambient/white-noise.mp3')).uri,
+          localPath: Asset.fromModule(require('../../assets/sounds/ambient/white-noise.mp3')).localUri,
+          fileSize: 7200000, // ~7.2MB
+          quality: 'medium',
+          sampleRate: 44100,
+          bitrate: 160,
+          format: 'mp3',
+          isPremium: false,
+          isDownloaded: true,
+          downloadProgress: 100,
+          metadata: {
+            artist: 'Audio Tech Solutions',
+            album: 'Noise Masking Collection',
+            tags: ['white-noise', 'focus', 'concentration', 'masking'],
+            bpm: null,
+            key: null,
+            mood: 'neutral',
+            energy: 'constant',
+            createdAt: Date.now(),
+            updatedAt: Date.now(),
+            version: '1.0'
+          },
+          analytics: {
+            playCount: 0,
+            favoriteCount: 0,
+            downloadCount: 0,
+            averageRating: 4.6,
+            lastPlayedAt: null
+          },
+          localization: {
+            'en': { name: 'Classic White Noise', description: 'Pure white noise for blocking distractions' },
+            'es': { name: 'Ruido Blanco Clásico', description: 'Ruido blanco puro para bloquear distracciones' },
+            'fr': { name: 'Bruit Blanc Classique', description: 'Bruit blanc pur pour bloquer les distractions' }
+          }
+        },
+        {
+          id: 'fan-sound',
+          name: 'Fan Sound',
+          category: 'mechanical',
+          subcategory: 'fan',
+          description: 'Steady fan sound for consistent white noise',
+          duration: 3600,
+          fileUrl: Asset.fromModule(require('../../assets/sounds/mechanical/fan.mp3')).uri,
+          localPath: Asset.fromModule(require('../../assets/sounds/mechanical/fan.mp3')).localUri,
+          fileSize: 6800000, // ~6.8MB
+          quality: 'medium',
+          sampleRate: 44100,
+          bitrate: 160,
+          format: 'mp3',
+          isPremium: false,
+          isDownloaded: true,
+          downloadProgress: 100,
+          metadata: {
+            artist: 'Mechanical Sounds Studio',
+            album: 'Household Collection',
+            tags: ['fan', 'mechanical', 'consistent', 'sleep'],
+            bpm: null,
+            key: null,
+            mood: 'neutral',
+            energy: 'constant',
+            createdAt: Date.now(),
+            updatedAt: Date.now(),
+            version: '1.0'
+          },
+          analytics: {
+            playCount: 0,
+            favoriteCount: 0,
+            downloadCount: 0,
+            averageRating: 4.5,
+            lastPlayedAt: null
+          },
+          localization: {
+            'en': { name: 'Fan Sound', description: 'Steady fan sound for consistent white noise' },
+            'es': { name: 'Sonido de Ventilador', description: 'Sonido constante de ventilador para ruido blanco' },
+            'fr': { name: 'Bruit de Ventilateur', description: 'Bruit constant de ventilateur pour un bruit blanc' }
+          }
+        },
+        // Premium Nature Sounds
+        {
+          id: 'forest-deep',
           name: 'Deep Forest Ambience',
           category: 'nature',
           subcategory: 'forest',
           description: 'Premium forest sounds with bird calls and wind',
           duration: 7200, // 2 hours
-          fileUrl: 'https://example.com/sounds/forest-premium.mp3',
-          localPath: null,
+          fileUrl: Asset.fromModule(require('../../assets/sounds/nature/forest-deep.mp3')).uri,
+          localPath: Asset.fromModule(require('../../assets/sounds/nature/forest-deep.mp3')).localUri,
           fileSize: 18400000, // ~18.4MB
           quality: 'ultra',
           sampleRate: 48000,
           bitrate: 320,
           format: 'mp3',
           isPremium: true,
-          isDownloaded: false,
-          downloadProgress: 0,
+          isDownloaded: true,
+          downloadProgress: 100,
           metadata: {
             artist: 'Premium Nature Audio',
             album: 'Forest Sanctuary',
@@ -494,26 +601,68 @@ export class SoundLibraryManager {
           }
         },
         {
-          id: 'white-noise-classic',
-          name: 'Classic White Noise',
-          category: 'artificial',
-          subcategory: 'white-noise',
-          description: 'Pure white noise for blocking distractions',
+          id: 'thunderstorm',
+          name: 'Thunderstorm',
+          category: 'nature',
+          subcategory: 'storm',
+          description: 'Premium thunderstorm with distant thunder and heavy rain',
           duration: 3600,
-          fileUrl: 'https://example.com/sounds/white-noise.mp3',
-          localPath: null,
-          fileSize: 7200000, // ~7.2MB
-          quality: 'medium',
-          sampleRate: 44100,
-          bitrate: 160,
+          fileUrl: Asset.fromModule(require('../../assets/sounds/nature/thunderstorm.mp3')).uri,
+          localPath: Asset.fromModule(require('../../assets/sounds/nature/thunderstorm.mp3')).localUri,
+          fileSize: 15200000, // ~15.2MB
+          quality: 'ultra',
+          sampleRate: 48000,
+          bitrate: 320,
           format: 'mp3',
-          isPremium: false,
-          isDownloaded: false,
-          downloadProgress: 0,
+          isPremium: true,
+          isDownloaded: true,
+          downloadProgress: 100,
           metadata: {
-            artist: 'Audio Tech Solutions',
-            album: 'Noise Masking Collection',
-            tags: ['white-noise', 'focus', 'concentration', 'masking'],
+            artist: 'Storm Sounds Co.',
+            album: 'Weather Collection Premium',
+            tags: ['thunder', 'storm', 'rain', 'premium', 'dramatic'],
+            bpm: null,
+            key: null,
+            mood: 'dramatic',
+            energy: 'medium',
+            createdAt: Date.now(),
+            updatedAt: Date.now(),
+            version: '1.0'
+          },
+          analytics: {
+            playCount: 0,
+            favoriteCount: 0,
+            downloadCount: 0,
+            averageRating: 4.7,
+            lastPlayedAt: null
+          },
+          localization: {
+            'en': { name: 'Thunderstorm', description: 'Premium thunderstorm with distant thunder and heavy rain' },
+            'es': { name: 'Tormenta Eléctrica', description: 'Tormenta premium con truenos distantes y lluvia fuerte' },
+            'fr': { name: 'Orage', description: 'Orage premium avec tonnerre distant et pluie forte' }
+          }
+        },
+        {
+          id: 'pink-noise',
+          name: 'Pink Noise',
+          category: 'ambient',
+          subcategory: 'pink-noise',
+          description: 'Premium pink noise for better sleep quality',
+          duration: 3600,
+          fileUrl: Asset.fromModule(require('../../assets/sounds/ambient/pink-noise.mp3')).uri,
+          localPath: Asset.fromModule(require('../../assets/sounds/ambient/pink-noise.mp3')).localUri,
+          fileSize: 7800000, // ~7.8MB
+          quality: 'high',
+          sampleRate: 44100,
+          bitrate: 192,
+          format: 'mp3',
+          isPremium: true,
+          isDownloaded: true,
+          downloadProgress: 100,
+          metadata: {
+            artist: 'Premium Audio Solutions',
+            album: 'Noise Spectrum Collection',
+            tags: ['pink-noise', 'premium', 'sleep', 'frequency'],
             bpm: null,
             key: null,
             mood: 'neutral',
@@ -526,13 +675,223 @@ export class SoundLibraryManager {
             playCount: 0,
             favoriteCount: 0,
             downloadCount: 0,
-            averageRating: 4.6,
+            averageRating: 4.8,
             lastPlayedAt: null
           },
           localization: {
-            'en': { name: 'Classic White Noise', description: 'Pure white noise for blocking distractions' },
-            'es': { name: 'Ruido Blanco Clásico', description: 'Ruido blanco puro para bloquear distracciones' },
-            'fr': { name: 'Bruit Blanc Classique', description: 'Bruit blanc pur pour bloquer les distractions' }
+            'en': { name: 'Pink Noise', description: 'Premium pink noise for better sleep quality' },
+            'es': { name: 'Ruido Rosa', description: 'Ruido rosa premium para mejor calidad de sueño' },
+            'fr': { name: 'Bruit Rose', description: 'Bruit rose premium pour une meilleure qualité de sommeil' }
+          }
+        },
+        {
+          id: 'brown-noise',
+          name: 'Brown Noise',
+          category: 'ambient',
+          subcategory: 'brown-noise',
+          description: 'Premium brown noise with deep, rich tones',
+          duration: 3600,
+          fileUrl: Asset.fromModule(require('../../assets/sounds/ambient/brown-noise.mp3')).uri,
+          localPath: Asset.fromModule(require('../../assets/sounds/ambient/brown-noise.mp3')).localUri,
+          fileSize: 8200000, // ~8.2MB
+          quality: 'high',
+          sampleRate: 44100,
+          bitrate: 192,
+          format: 'mp3',
+          isPremium: true,
+          isDownloaded: true,
+          downloadProgress: 100,
+          metadata: {
+            artist: 'Premium Audio Solutions',
+            album: 'Noise Spectrum Collection',
+            tags: ['brown-noise', 'premium', 'deep', 'frequency'],
+            bpm: null,
+            key: null,
+            mood: 'neutral',
+            energy: 'constant',
+            createdAt: Date.now(),
+            updatedAt: Date.now(),
+            version: '1.0'
+          },
+          analytics: {
+            playCount: 0,
+            favoriteCount: 0,
+            downloadCount: 0,
+            averageRating: 4.7,
+            lastPlayedAt: null
+          },
+          localization: {
+            'en': { name: 'Brown Noise', description: 'Premium brown noise with deep, rich tones' },
+            'es': { name: 'Ruido Marrón', description: 'Ruido marrón premium con tonos profundos y ricos' },
+            'fr': { name: 'Bruit Brun', description: 'Bruit brun premium avec des tons profonds et riches' }
+          }
+        },
+        {
+          id: 'air-conditioner',
+          name: 'Air Conditioner',
+          category: 'mechanical',
+          subcategory: 'hvac',
+          description: 'Premium air conditioner hum for consistent ambient sound',
+          duration: 3600,
+          fileUrl: Asset.fromModule(require('../../assets/sounds/mechanical/air-conditioner.mp3')).uri,
+          localPath: Asset.fromModule(require('../../assets/sounds/mechanical/air-conditioner.mp3')).localUri,
+          fileSize: 7400000, // ~7.4MB
+          quality: 'high',
+          sampleRate: 44100,
+          bitrate: 192,
+          format: 'mp3',
+          isPremium: true,
+          isDownloaded: true,
+          downloadProgress: 100,
+          metadata: {
+            artist: 'Mechanical Sounds Studio',
+            album: 'HVAC Collection Premium',
+            tags: ['air-conditioner', 'hvac', 'premium', 'consistent'],
+            bpm: null,
+            key: null,
+            mood: 'neutral',
+            energy: 'constant',
+            createdAt: Date.now(),
+            updatedAt: Date.now(),
+            version: '1.0'
+          },
+          analytics: {
+            playCount: 0,
+            favoriteCount: 0,
+            downloadCount: 0,
+            averageRating: 4.4,
+            lastPlayedAt: null
+          },
+          localization: {
+            'en': { name: 'Air Conditioner', description: 'Premium air conditioner hum for consistent ambient sound' },
+            'es': { name: 'Aire Acondicionado', description: 'Zumbido premium de aire acondicionado para sonido ambiente constante' },
+            'fr': { name: 'Climatiseur', description: 'Bourdonnement premium de climatiseur pour un son ambiant constant' }
+          }
+        },
+        {
+          id: 'washing-machine',
+          name: 'Washing Machine',
+          category: 'mechanical',
+          subcategory: 'appliance',
+          description: 'Premium washing machine sound with gentle cycles',
+          duration: 3600,
+          fileUrl: Asset.fromModule(require('../../assets/sounds/mechanical/washing-machine.mp3')).uri,
+          localPath: Asset.fromModule(require('../../assets/sounds/mechanical/washing-machine.mp3')).localUri,
+          fileSize: 8600000, // ~8.6MB
+          quality: 'high',
+          sampleRate: 44100,
+          bitrate: 192,
+          format: 'mp3',
+          isPremium: true,
+          isDownloaded: true,
+          downloadProgress: 100,
+          metadata: {
+            artist: 'Mechanical Sounds Studio',
+            album: 'Appliance Collection Premium',
+            tags: ['washing-machine', 'appliance', 'premium', 'cycles'],
+            bpm: null,
+            key: null,
+            mood: 'neutral',
+            energy: 'rhythmic',
+            createdAt: Date.now(),
+            updatedAt: Date.now(),
+            version: '1.0'
+          },
+          analytics: {
+            playCount: 0,
+            favoriteCount: 0,
+            downloadCount: 0,
+            averageRating: 4.3,
+            lastPlayedAt: null
+          },
+          localization: {
+            'en': { name: 'Washing Machine', description: 'Premium washing machine sound with gentle cycles' },
+            'es': { name: 'Lavadora', description: 'Sonido premium de lavadora con ciclos suaves' },
+            'fr': { name: 'Lave-linge', description: 'Son premium de machine à laver avec cycles doux' }
+          }
+        },
+        {
+          id: 'focus-40hz',
+          name: 'Focus Enhancement 40Hz',
+          category: 'binaural',
+          subcategory: 'focus',
+          description: 'Premium 40Hz binaural beats for enhanced focus and concentration',
+          duration: 3600,
+          fileUrl: Asset.fromModule(require('../../assets/sounds/binaural/focus-40hz.mp3')).uri,
+          localPath: Asset.fromModule(require('../../assets/sounds/binaural/focus-40hz.mp3')).localUri,
+          fileSize: 9800000, // ~9.8MB
+          quality: 'ultra',
+          sampleRate: 48000,
+          bitrate: 256,
+          format: 'mp3',
+          isPremium: true,
+          isDownloaded: true,
+          downloadProgress: 100,
+          metadata: {
+            artist: 'Brainwave Frequencies Lab',
+            album: 'Cognitive Enhancement Series',
+            tags: ['binaural', 'focus', '40hz', 'premium', 'concentration', 'gamma'],
+            bpm: null,
+            key: null,
+            mood: 'focused',
+            energy: 'high',
+            createdAt: Date.now(),
+            updatedAt: Date.now(),
+            version: '1.0'
+          },
+          analytics: {
+            playCount: 0,
+            favoriteCount: 0,
+            downloadCount: 0,
+            averageRating: 4.9,
+            lastPlayedAt: null
+          },
+          localization: {
+            'en': { name: 'Focus Enhancement 40Hz', description: 'Premium 40Hz binaural beats for enhanced focus and concentration' },
+            'es': { name: 'Mejora del Enfoque 40Hz', description: 'Ondas binaurales premium de 40Hz para mejorar el enfoque y la concentración' },
+            'fr': { name: 'Amélioration Focus 40Hz', description: 'Battements binauraux premium 40Hz pour améliorer la concentration et l\'attention' }
+          }
+        },
+        {
+          id: 'relaxation-10hz',
+          name: 'Deep Relaxation 10Hz',
+          category: 'binaural',
+          subcategory: 'relaxation',
+          description: 'Premium 10Hz alpha waves for deep relaxation and stress relief',
+          duration: 3600,
+          fileUrl: Asset.fromModule(require('../../assets/sounds/binaural/relaxation-10hz.mp3')).uri,
+          localPath: Asset.fromModule(require('../../assets/sounds/binaural/relaxation-10hz.mp3')).localUri,
+          fileSize: 9400000, // ~9.4MB
+          quality: 'ultra',
+          sampleRate: 48000,
+          bitrate: 256,
+          format: 'mp3',
+          isPremium: true,
+          isDownloaded: true,
+          downloadProgress: 100,
+          metadata: {
+            artist: 'Brainwave Frequencies Lab',
+            album: 'Relaxation Series',
+            tags: ['binaural', 'relaxation', '10hz', 'premium', 'alpha', 'stress-relief'],
+            bpm: null,
+            key: null,
+            mood: 'relaxed',
+            energy: 'low',
+            createdAt: Date.now(),
+            updatedAt: Date.now(),
+            version: '1.0'
+          },
+          analytics: {
+            playCount: 0,
+            favoriteCount: 0,
+            downloadCount: 0,
+            averageRating: 4.8,
+            lastPlayedAt: null
+          },
+          localization: {
+            'en': { name: 'Deep Relaxation 10Hz', description: 'Premium 10Hz alpha waves for deep relaxation and stress relief' },
+            'es': { name: 'Relajación Profunda 10Hz', description: 'Ondas alfa premium de 10Hz para relajación profunda y alivio del estrés' },
+            'fr': { name: 'Relaxation Profonde 10Hz', description: 'Ondes alpha premium 10Hz pour une relaxation profonde et un soulagement du stress' }
           }
         }
       ],
@@ -543,12 +902,13 @@ export class SoundLibraryManager {
           description: 'Natural sounds for relaxation and sleep',
           iconName: 'leaf',
           colorCode: '#4CAF50',
-          soundCount: 3,
+          soundCount: 4,
           isPremium: false,
           subcategories: [
             { id: 'rain', name: 'Rain', soundCount: 1 },
             { id: 'water', name: 'Water', soundCount: 1 },
-            { id: 'forest', name: 'Forest', soundCount: 1 }
+            { id: 'forest', name: 'Forest', soundCount: 1 },
+            { id: 'storm', name: 'Storm', soundCount: 1 }
           ],
           localization: {
             'en': { name: 'Nature', description: 'Natural sounds for relaxation and sleep' },
@@ -557,22 +917,59 @@ export class SoundLibraryManager {
           }
         },
         {
-          id: 'artificial',
-          name: 'Artificial',
-          description: 'Engineered sounds for focus and concentration',
+          id: 'ambient',
+          name: 'Ambient',
+          description: 'Engineered ambient sounds for focus and concentration',
           iconName: 'settings',
           colorCode: '#2196F3',
-          soundCount: 1,
+          soundCount: 3,
           isPremium: false,
           subcategories: [
             { id: 'white-noise', name: 'White Noise', soundCount: 1 },
-            { id: 'pink-noise', name: 'Pink Noise', soundCount: 0 },
-            { id: 'brown-noise', name: 'Brown Noise', soundCount: 0 }
+            { id: 'pink-noise', name: 'Pink Noise', soundCount: 1 },
+            { id: 'brown-noise', name: 'Brown Noise', soundCount: 1 }
           ],
           localization: {
-            'en': { name: 'Artificial', description: 'Engineered sounds for focus and concentration' },
-            'es': { name: 'Artificial', description: 'Sonidos diseñados para concentración y enfoque' },
-            'fr': { name: 'Artificiel', description: 'Sons conçus pour la concentration et le focus' }
+            'en': { name: 'Ambient', description: 'Engineered ambient sounds for focus and concentration' },
+            'es': { name: 'Ambiental', description: 'Sonidos ambientales diseñados para concentración y enfoque' },
+            'fr': { name: 'Ambiant', description: 'Sons ambiants conçus pour la concentration et le focus' }
+          }
+        },
+        {
+          id: 'mechanical',
+          name: 'Mechanical',
+          description: 'Consistent mechanical sounds for reliable background noise',
+          iconName: 'cog',
+          colorCode: '#9E9E9E',
+          soundCount: 3,
+          isPremium: false,
+          subcategories: [
+            { id: 'fan', name: 'Fan', soundCount: 1 },
+            { id: 'hvac', name: 'HVAC', soundCount: 1 },
+            { id: 'appliance', name: 'Appliances', soundCount: 1 }
+          ],
+          localization: {
+            'en': { name: 'Mechanical', description: 'Consistent mechanical sounds for reliable background noise' },
+            'es': { name: 'Mecánico', description: 'Sonidos mecánicos constantes para ruido de fondo confiable' },
+            'fr': { name: 'Mécanique', description: 'Sons mécaniques constants pour un bruit de fond fiable' }
+          }
+        },
+        {
+          id: 'binaural',
+          name: 'Binaural Beats',
+          description: 'Premium brainwave entrainment for focus and relaxation',
+          iconName: 'brain',
+          colorCode: '#9C27B0',
+          soundCount: 2,
+          isPremium: true,
+          subcategories: [
+            { id: 'focus', name: 'Focus', soundCount: 1 },
+            { id: 'relaxation', name: 'Relaxation', soundCount: 1 }
+          ],
+          localization: {
+            'en': { name: 'Binaural Beats', description: 'Premium brainwave entrainment for focus and relaxation' },
+            'es': { name: 'Ondas Binaurales', description: 'Entrenamiento premium de ondas cerebrales para enfoque y relajación' },
+            'fr': { name: 'Battements Binauraux', description: 'Entraînement premium des ondes cérébrales pour la concentration et la relaxation' }
           }
         }
       ]

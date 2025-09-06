@@ -55,6 +55,7 @@ export const colors = {
     500: '#EF4444',
     600: '#DC2626',
     700: '#B91C1C',
+    900: '#7F1D1D',
   },
 
   // Sleep-specific colors
@@ -70,31 +71,30 @@ export const colors = {
 };
 
 export const typography = {
+  // Legacy structure for backward compatibility
   fontFamily: {
     regular: 'System',
     medium: 'System',
     semibold: 'System',
     bold: 'System',
   },
-
   fontSize: {
     xs: 12,
     sm: 14,
     base: 16,
+    md: 16,  // Added md mapping
     lg: 18,
     xl: 20,
     '2xl': 24,
     '3xl': 30,
     '4xl': 36,
   },
-
   fontWeight: {
     normal: '400' as const,
     medium: '500' as const,
     semibold: '600' as const,
     bold: '700' as const,
   },
-
   lineHeight: {
     none: 1,
     tight: 1.25,
@@ -102,6 +102,25 @@ export const typography = {
     normal: 1.5,
     relaxed: 1.625,
     loose: 2,
+  },
+  
+  // New structure expected by components
+  fonts: {
+    regular: 'System',
+    medium: 'System',
+    semibold: 'System',
+    bold: 'System',
+  },
+  sizes: {
+    xs: 12,
+    sm: 14,
+    base: 16,
+    md: 16,
+    lg: 18,
+    xl: 20,
+    '2xl': 24,
+    '3xl': 30,
+    '4xl': 36,
   },
 };
 
@@ -119,6 +138,12 @@ export const spacing = {
   16: 64,
   20: 80,
   24: 96,
+  // Add missing spacing values
+  xs: 4,
+  sm: 8,
+  md: 16,
+  lg: 32,
+  xl: 48,
 };
 
 export const borderRadius = {
@@ -167,8 +192,10 @@ export const lightTheme = {
     surface: '#FFFFFF',
     card: '#FFFFFF',
     text: colors.gray[900],
+    textPrimary: colors.gray[900],
     textSecondary: colors.gray[600],
     primary: colors.primary[500],
+    primaryDark: colors.primary[600],
     primaryVariant: colors.primary[600],
     secondary: colors.gray[500],
     accent: colors.primary[500],
@@ -177,8 +204,11 @@ export const lightTheme = {
     warning: colors.warning[500],
     error: colors.error[500],
     disabled: colors.gray[300],
+    surfaceVariant: colors.gray[100],
+    shadow: 'rgba(0, 0, 0, 0.1)', // Added missing shadow
+    errorSurface: colors.error[50], // Added missing errorSurface
   },
-  ...typography,
+  typography,
   spacing,
   borderRadius,
   shadows,
@@ -191,8 +221,10 @@ export const darkTheme = {
     surface: colors.sleep.surface,
     card: colors.sleep.card,
     text: colors.sleep.text,
+    textPrimary: colors.sleep.text,
     textSecondary: colors.sleep.textSecondary,
     primary: colors.sleep.accent,
+    primaryDark: colors.primary[700],
     primaryVariant: colors.primary[600],
     secondary: colors.gray[400],
     accent: colors.sleep.accent,
@@ -201,8 +233,11 @@ export const darkTheme = {
     warning: colors.warning[500],
     error: colors.error[500],
     disabled: colors.gray[600],
+    surfaceVariant: colors.gray[700],
+    shadow: 'rgba(0, 0, 0, 0.3)', // Added missing shadow for dark theme
+    errorSurface: colors.error[900], // Added missing errorSurface for dark theme
   },
-  ...typography,
+  typography,
   spacing,
   borderRadius,
   shadows: {
@@ -256,6 +291,9 @@ export const animations = {
     easeInOut: 'ease-in-out',
   },
 };
+
+// Default theme (dark theme optimized for sleep)
+export const theme = darkTheme;
 
 export default {
   light: lightTheme,

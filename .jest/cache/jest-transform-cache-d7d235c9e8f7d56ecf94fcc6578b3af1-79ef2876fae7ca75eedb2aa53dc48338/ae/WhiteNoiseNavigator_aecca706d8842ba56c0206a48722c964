@@ -1,0 +1,553 @@
+fc4e42830963043d7901dd1512e34007
+"use strict";
+
+/* istanbul ignore next */
+function cov_2ijloajiwe() {
+  var path = "/Users/yanivhadar/Desktop/White Noise Alarm/AlarmWhiteNoiseApp/src/navigation/WhiteNoiseNavigator.tsx";
+  var hash = "3646f347284f166f34fb7599874733497ee089b0";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/yanivhadar/Desktop/White Noise Alarm/AlarmWhiteNoiseApp/src/navigation/WhiteNoiseNavigator.tsx",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 22
+        },
+        end: {
+          line: 4,
+          column: 1
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 4
+        },
+        end: {
+          line: 3,
+          column: 62
+        }
+      },
+      "2": {
+        start: {
+          line: 5,
+          column: 0
+        },
+        end: {
+          line: 5,
+          column: 62
+        }
+      },
+      "3": {
+        start: {
+          line: 6,
+          column: 0
+        },
+        end: {
+          line: 6,
+          column: 37
+        }
+      },
+      "4": {
+        start: {
+          line: 7,
+          column: 22
+        },
+        end: {
+          line: 7,
+          column: 50
+        }
+      },
+      "5": {
+        start: {
+          line: 8,
+          column: 16
+        },
+        end: {
+          line: 8,
+          column: 50
+        }
+      },
+      "6": {
+        start: {
+          line: 9,
+          column: 24
+        },
+        end: {
+          line: 9,
+          column: 72
+        }
+      },
+      "7": {
+        start: {
+          line: 11,
+          column: 31
+        },
+        end: {
+          line: 11,
+          column: 84
+        }
+      },
+      "8": {
+        start: {
+          line: 12,
+          column: 29
+        },
+        end: {
+          line: 12,
+          column: 97
+        }
+      },
+      "9": {
+        start: {
+          line: 13,
+          column: 27
+        },
+        end: {
+          line: 13,
+          column: 93
+        }
+      },
+      "10": {
+        start: {
+          line: 14,
+          column: 31
+        },
+        end: {
+          line: 14,
+          column: 101
+        }
+      },
+      "11": {
+        start: {
+          line: 15,
+          column: 34
+        },
+        end: {
+          line: 15,
+          column: 88
+        }
+      },
+      "12": {
+        start: {
+          line: 16,
+          column: 14
+        },
+        end: {
+          line: 16,
+          column: 49
+        }
+      },
+      "13": {
+        start: {
+          line: 17,
+          column: 28
+        },
+        end: {
+          line: 49,
+          column: 1
+        }
+      },
+      "14": {
+        start: {
+          line: 18,
+          column: 22
+        },
+        end: {
+          line: 18,
+          column: 53
+        }
+      },
+      "15": {
+        start: {
+          line: 19,
+          column: 26
+        },
+        end: {
+          line: 34,
+          column: 5
+        }
+      },
+      "16": {
+        start: {
+          line: 35,
+          column: 4
+        },
+        end: {
+          line: 48,
+          column: 26
+        }
+      },
+      "17": {
+        start: {
+          line: 50,
+          column: 0
+        },
+        end: {
+          line: 50,
+          column: 50
+        }
+      },
+      "18": {
+        start: {
+          line: 51,
+          column: 0
+        },
+        end: {
+          line: 51,
+          column: 46
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 2,
+            column: 56
+          },
+          end: {
+            line: 2,
+            column: 57
+          }
+        },
+        loc: {
+          start: {
+            line: 2,
+            column: 71
+          },
+          end: {
+            line: 4,
+            column: 1
+          }
+        },
+        line: 2
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 17,
+            column: 28
+          },
+          end: {
+            line: 17,
+            column: 29
+          }
+        },
+        loc: {
+          start: {
+            line: 17,
+            column: 34
+          },
+          end: {
+            line: 49,
+            column: 1
+          }
+        },
+        line: 17
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 2,
+            column: 22
+          },
+          end: {
+            line: 4,
+            column: 1
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 2,
+            column: 23
+          },
+          end: {
+            line: 2,
+            column: 27
+          }
+        }, {
+          start: {
+            line: 2,
+            column: 31
+          },
+          end: {
+            line: 2,
+            column: 51
+          }
+        }, {
+          start: {
+            line: 2,
+            column: 56
+          },
+          end: {
+            line: 4,
+            column: 1
+          }
+        }],
+        line: 2
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 3,
+            column: 11
+          },
+          end: {
+            line: 3,
+            column: 61
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 3,
+            column: 37
+          },
+          end: {
+            line: 3,
+            column: 40
+          }
+        }, {
+          start: {
+            line: 3,
+            column: 43
+          },
+          end: {
+            line: 3,
+            column: 61
+          }
+        }],
+        line: 3
+      },
+      "2": {
+        loc: {
+          start: {
+            line: 3,
+            column: 12
+          },
+          end: {
+            line: 3,
+            column: 33
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 3,
+            column: 12
+          },
+          end: {
+            line: 3,
+            column: 15
+          }
+        }, {
+          start: {
+            line: 3,
+            column: 19
+          },
+          end: {
+            line: 3,
+            column: 33
+          }
+        }],
+        line: 3
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {
+      "0": [0, 0, 0],
+      "1": [0, 0],
+      "2": [0, 0]
+    },
+    inputSourceMap: {
+      file: "/Users/yanivhadar/Desktop/White Noise Alarm/AlarmWhiteNoiseApp/src/navigation/WhiteNoiseNavigator.tsx",
+      mappings: ";;;;;;;AAQA,mDAA+D;AAC/D,yEAAiE;AAGjE,iBAAiB;AACjB,qFAAkF;AAClF,kGAA0E;AAC1E,8FAAsE;AACtE,sGAA8E;AAC9E,yFAAsF;AAEtF,MAAM,KAAK,GAAG,IAAA,4BAAoB,GAA4B,CAAC;AAExD,MAAM,mBAAmB,GAAa,GAAG,EAAE;IAChD,MAAM,EAAE,KAAK,EAAE,GAAG,IAAA,wBAAQ,GAAE,CAAC;IAE7B,MAAM,aAAa,GAAG;QACpB,WAAW,EAAE;YACX,eAAe,EAAE,KAAK,CAAC,MAAM,CAAC,OAAO;YACrC,WAAW,EAAE,KAAK,CAAC,MAAM,CAAC,MAAM;YAChC,SAAS,EAAE,CAAC;SACb;QACD,eAAe,EAAE,KAAK,CAAC,MAAM,CAAC,IAAI;QAClC,gBAAgB,EAAE;YAChB,UAAU,EAAE,KAAK,CAAC,UAAU,CAAC,UAAU,CAAC,QAAQ;YAChD,QAAQ,EAAE,KAAK,CAAC,UAAU,CAAC,KAAK,CAAC,EAAE;SACpC;QACD,sBAAsB,EAAE,KAAK;QAC7B,SAAS,EAAE;YACT,eAAe,EAAE,KAAK,CAAC,MAAM,CAAC,UAAU;SACzC;KACF,CAAC;IAEF,OAAO,CACL,wBAAC,KAAK,CAAC,SAAS,IACd,aAAa,EAAE,aAAa,EAC5B,gBAAgB,EAAC,gBAAgB,aAEjC,uBAAC,KAAK,CAAC,MAAM,IACX,IAAI,EAAC,gBAAgB,EACrB,SAAS,EAAE,2CAAoB,EAC/B,OAAO,EAAE;oBACP,WAAW,EAAE,KAAK,EAAE,6BAA6B;iBAClD,GACD,EAEF,uBAAC,KAAK,CAAC,MAAM,IACX,IAAI,EAAC,cAAc,EACnB,SAAS,EAAE,4BAAkB,EAC7B,OAAO,EAAE;oBACP,KAAK,EAAE,eAAe;iBACvB,GACD,EAEF,uBAAC,KAAK,CAAC,MAAM,IACX,IAAI,EAAC,YAAY,EACjB,SAAS,EAAE,0BAAgB,EAC3B,OAAO,EAAE;oBACP,KAAK,EAAE,aAAa;oBACpB,WAAW,EAAE,KAAK;iBACnB,GACD,EAEF,uBAAC,KAAK,CAAC,MAAM,IACX,IAAI,EAAC,gBAAgB,EACrB,SAAS,EAAE,8BAAoB,EAC/B,OAAO,EAAE;oBACP,KAAK,EAAE,iBAAiB;iBACzB,GACD,EAEF,uBAAC,KAAK,CAAC,MAAM,IACX,IAAI,EAAC,mBAAmB,EACxB,SAAS,EAAE,iDAAuB,EAClC,OAAO,EAAE;oBACP,KAAK,EAAE,iBAAiB;oBACxB,WAAW,EAAE,KAAK,EAAE,mCAAmC;oBACvD,YAAY,EAAE,OAAO;iBACtB,GACD,IACc,CACnB,CAAC;AACJ,CAAC,CAAC;AArEW,QAAA,mBAAmB,uBAqE9B;AAEF,kBAAe,2BAAmB,CAAC",
+      names: [],
+      sources: ["/Users/yanivhadar/Desktop/White Noise Alarm/AlarmWhiteNoiseApp/src/navigation/WhiteNoiseNavigator.tsx"],
+      sourcesContent: ["/**\n * White Noise Navigator\n * \n * Stack navigator for white noise features including\n * sound library, playback controls, and session management.\n */\n\nimport React from 'react';\nimport { createStackNavigator } from '@react-navigation/stack';\nimport { useTheme } from '../components/providers/ThemeProvider';\nimport { WhiteNoiseStackParamList } from '../types/navigation';\n\n// Import screens\nimport { WhiteNoiseHomeScreen } from '../screens/whitenoise/WhiteNoiseHomeScreen';\nimport SoundLibraryScreen from '../screens/whitenoise/SoundLibraryScreen';\nimport NowPlayingScreen from '../screens/whitenoise/NowPlayingScreen';\nimport SessionHistoryScreen from '../screens/whitenoise/SessionHistoryScreen';\nimport { SessionMonitoringScreen } from '../screens/sessions/SessionMonitoringScreen';\n\nconst Stack = createStackNavigator<WhiteNoiseStackParamList>();\n\nexport const WhiteNoiseNavigator: React.FC = () => {\n  const { theme } = useTheme();\n\n  const screenOptions = {\n    headerStyle: {\n      backgroundColor: theme.colors.surface,\n      shadowColor: theme.colors.border,\n      elevation: 1,\n    },\n    headerTintColor: theme.colors.text,\n    headerTitleStyle: {\n      fontWeight: theme.typography.fontWeight.semibold,\n      fontSize: theme.typography.sizes.lg,\n    },\n    headerBackTitleVisible: false,\n    cardStyle: {\n      backgroundColor: theme.colors.background,\n    },\n  };\n\n  return (\n    <Stack.Navigator\n      screenOptions={screenOptions}\n      initialRouteName=\"WhiteNoiseHome\"\n    >\n      <Stack.Screen\n        name=\"WhiteNoiseHome\"\n        component={WhiteNoiseHomeScreen}\n        options={{\n          headerShown: false, // Custom header in component\n        }}\n      />\n\n      <Stack.Screen\n        name=\"SoundLibrary\"\n        component={SoundLibraryScreen}\n        options={{\n          title: 'Sound Library',\n        }}\n      />\n\n      <Stack.Screen\n        name=\"NowPlaying\"\n        component={NowPlayingScreen}\n        options={{\n          title: 'Now Playing',\n          headerShown: false,\n        }}\n      />\n\n      <Stack.Screen\n        name=\"SessionHistory\"\n        component={SessionHistoryScreen}\n        options={{\n          title: 'Session History',\n        }}\n      />\n\n      <Stack.Screen\n        name=\"SessionMonitoring\"\n        component={SessionMonitoringScreen}\n        options={{\n          title: 'Session Monitor',\n          headerShown: false, // Screen has its own custom header\n          presentation: 'modal',\n        }}\n      />\n    </Stack.Navigator>\n  );\n};\n\nexport default WhiteNoiseNavigator;"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "3646f347284f166f34fb7599874733497ee089b0"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_2ijloajiwe = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+cov_2ijloajiwe();
+var __importDefault =
+/* istanbul ignore next */
+(cov_2ijloajiwe().s[0]++,
+/* istanbul ignore next */
+(cov_2ijloajiwe().b[0][0]++, this) &&
+/* istanbul ignore next */
+(cov_2ijloajiwe().b[0][1]++, this.__importDefault) ||
+/* istanbul ignore next */
+(cov_2ijloajiwe().b[0][2]++, function (mod) {
+  /* istanbul ignore next */
+  cov_2ijloajiwe().f[0]++;
+  cov_2ijloajiwe().s[1]++;
+  return /* istanbul ignore next */(cov_2ijloajiwe().b[2][0]++, mod) &&
+  /* istanbul ignore next */
+  (cov_2ijloajiwe().b[2][1]++, mod.__esModule) ?
+  /* istanbul ignore next */
+  (cov_2ijloajiwe().b[1][0]++, mod) :
+  /* istanbul ignore next */
+  (cov_2ijloajiwe().b[1][1]++, {
+    "default": mod
+  });
+}));
+/* istanbul ignore next */
+cov_2ijloajiwe().s[2]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* istanbul ignore next */
+cov_2ijloajiwe().s[3]++;
+exports.WhiteNoiseNavigator = void 0;
+const jsx_runtime_1 =
+/* istanbul ignore next */
+(cov_2ijloajiwe().s[4]++, require("react/jsx-runtime"));
+const stack_1 =
+/* istanbul ignore next */
+(cov_2ijloajiwe().s[5]++, require("@react-navigation/stack"));
+const ThemeProvider_1 =
+/* istanbul ignore next */
+(cov_2ijloajiwe().s[6]++, require("../components/providers/ThemeProvider"));
+// Import screens
+const WhiteNoiseHomeScreen_1 =
+/* istanbul ignore next */
+(cov_2ijloajiwe().s[7]++, require("../screens/whitenoise/WhiteNoiseHomeScreen"));
+const SoundLibraryScreen_1 =
+/* istanbul ignore next */
+(cov_2ijloajiwe().s[8]++, __importDefault(require("../screens/whitenoise/SoundLibraryScreen")));
+const NowPlayingScreen_1 =
+/* istanbul ignore next */
+(cov_2ijloajiwe().s[9]++, __importDefault(require("../screens/whitenoise/NowPlayingScreen")));
+const SessionHistoryScreen_1 =
+/* istanbul ignore next */
+(cov_2ijloajiwe().s[10]++, __importDefault(require("../screens/whitenoise/SessionHistoryScreen")));
+const SessionMonitoringScreen_1 =
+/* istanbul ignore next */
+(cov_2ijloajiwe().s[11]++, require("../screens/sessions/SessionMonitoringScreen"));
+const Stack =
+/* istanbul ignore next */
+(cov_2ijloajiwe().s[12]++, (0, stack_1.createStackNavigator)());
+/* istanbul ignore next */
+cov_2ijloajiwe().s[13]++;
+const WhiteNoiseNavigator = () => {
+  /* istanbul ignore next */
+  cov_2ijloajiwe().f[1]++;
+  const {
+    theme
+  } =
+  /* istanbul ignore next */
+  (cov_2ijloajiwe().s[14]++, (0, ThemeProvider_1.useTheme)());
+  const screenOptions =
+  /* istanbul ignore next */
+  (cov_2ijloajiwe().s[15]++, {
+    headerStyle: {
+      backgroundColor: theme.colors.surface,
+      shadowColor: theme.colors.border,
+      elevation: 1
+    },
+    headerTintColor: theme.colors.text,
+    headerTitleStyle: {
+      fontWeight: theme.typography.fontWeight.semibold,
+      fontSize: theme.typography.sizes.lg
+    },
+    headerBackTitleVisible: false,
+    cardStyle: {
+      backgroundColor: theme.colors.background
+    }
+  });
+  /* istanbul ignore next */
+  cov_2ijloajiwe().s[16]++;
+  return (0, jsx_runtime_1.jsxs)(Stack.Navigator, {
+    screenOptions: screenOptions,
+    initialRouteName: "WhiteNoiseHome",
+    children: [(0, jsx_runtime_1.jsx)(Stack.Screen, {
+      name: "WhiteNoiseHome",
+      component: WhiteNoiseHomeScreen_1.WhiteNoiseHomeScreen,
+      options: {
+        headerShown: false // Custom header in component
+      }
+    }), (0, jsx_runtime_1.jsx)(Stack.Screen, {
+      name: "SoundLibrary",
+      component: SoundLibraryScreen_1.default,
+      options: {
+        title: 'Sound Library'
+      }
+    }), (0, jsx_runtime_1.jsx)(Stack.Screen, {
+      name: "NowPlaying",
+      component: NowPlayingScreen_1.default,
+      options: {
+        title: 'Now Playing',
+        headerShown: false
+      }
+    }), (0, jsx_runtime_1.jsx)(Stack.Screen, {
+      name: "SessionHistory",
+      component: SessionHistoryScreen_1.default,
+      options: {
+        title: 'Session History'
+      }
+    }), (0, jsx_runtime_1.jsx)(Stack.Screen, {
+      name: "SessionMonitoring",
+      component: SessionMonitoringScreen_1.SessionMonitoringScreen,
+      options: {
+        title: 'Session Monitor',
+        headerShown: false,
+        // Screen has its own custom header
+        presentation: 'modal'
+      }
+    })]
+  });
+};
+/* istanbul ignore next */
+cov_2ijloajiwe().s[17]++;
+exports.WhiteNoiseNavigator = WhiteNoiseNavigator;
+/* istanbul ignore next */
+cov_2ijloajiwe().s[18]++;
+exports.default = exports.WhiteNoiseNavigator;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJjb3ZfMmlqbG9haml3ZSIsImFjdHVhbENvdmVyYWdlIiwic3RhY2tfMSIsInMiLCJyZXF1aXJlIiwiVGhlbWVQcm92aWRlcl8xIiwiV2hpdGVOb2lzZUhvbWVTY3JlZW5fMSIsIlNvdW5kTGlicmFyeVNjcmVlbl8xIiwiX19pbXBvcnREZWZhdWx0IiwiTm93UGxheWluZ1NjcmVlbl8xIiwiU2Vzc2lvbkhpc3RvcnlTY3JlZW5fMSIsIlNlc3Npb25Nb25pdG9yaW5nU2NyZWVuXzEiLCJTdGFjayIsImNyZWF0ZVN0YWNrTmF2aWdhdG9yIiwiV2hpdGVOb2lzZU5hdmlnYXRvciIsImYiLCJ0aGVtZSIsInVzZVRoZW1lIiwic2NyZWVuT3B0aW9ucyIsImhlYWRlclN0eWxlIiwiYmFja2dyb3VuZENvbG9yIiwiY29sb3JzIiwic3VyZmFjZSIsInNoYWRvd0NvbG9yIiwiYm9yZGVyIiwiZWxldmF0aW9uIiwiaGVhZGVyVGludENvbG9yIiwidGV4dCIsImhlYWRlclRpdGxlU3R5bGUiLCJmb250V2VpZ2h0IiwidHlwb2dyYXBoeSIsInNlbWlib2xkIiwiZm9udFNpemUiLCJzaXplcyIsImxnIiwiaGVhZGVyQmFja1RpdGxlVmlzaWJsZSIsImNhcmRTdHlsZSIsImJhY2tncm91bmQiLCJqc3hfcnVudGltZV8xIiwianN4cyIsIk5hdmlnYXRvciIsImluaXRpYWxSb3V0ZU5hbWUiLCJjaGlsZHJlbiIsImpzeCIsIlNjcmVlbiIsIm5hbWUiLCJjb21wb25lbnQiLCJXaGl0ZU5vaXNlSG9tZVNjcmVlbiIsIm9wdGlvbnMiLCJoZWFkZXJTaG93biIsImRlZmF1bHQiLCJ0aXRsZSIsIlNlc3Npb25Nb25pdG9yaW5nU2NyZWVuIiwicHJlc2VudGF0aW9uIiwiZXhwb3J0cyJdLCJzb3VyY2VzIjpbIi9Vc2Vycy95YW5pdmhhZGFyL0Rlc2t0b3AvV2hpdGUgTm9pc2UgQWxhcm0vQWxhcm1XaGl0ZU5vaXNlQXBwL3NyYy9uYXZpZ2F0aW9uL1doaXRlTm9pc2VOYXZpZ2F0b3IudHN4Il0sInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogV2hpdGUgTm9pc2UgTmF2aWdhdG9yXG4gKiBcbiAqIFN0YWNrIG5hdmlnYXRvciBmb3Igd2hpdGUgbm9pc2UgZmVhdHVyZXMgaW5jbHVkaW5nXG4gKiBzb3VuZCBsaWJyYXJ5LCBwbGF5YmFjayBjb250cm9scywgYW5kIHNlc3Npb24gbWFuYWdlbWVudC5cbiAqL1xuXG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgY3JlYXRlU3RhY2tOYXZpZ2F0b3IgfSBmcm9tICdAcmVhY3QtbmF2aWdhdGlvbi9zdGFjayc7XG5pbXBvcnQgeyB1c2VUaGVtZSB9IGZyb20gJy4uL2NvbXBvbmVudHMvcHJvdmlkZXJzL1RoZW1lUHJvdmlkZXInO1xuaW1wb3J0IHsgV2hpdGVOb2lzZVN0YWNrUGFyYW1MaXN0IH0gZnJvbSAnLi4vdHlwZXMvbmF2aWdhdGlvbic7XG5cbi8vIEltcG9ydCBzY3JlZW5zXG5pbXBvcnQgeyBXaGl0ZU5vaXNlSG9tZVNjcmVlbiB9IGZyb20gJy4uL3NjcmVlbnMvd2hpdGVub2lzZS9XaGl0ZU5vaXNlSG9tZVNjcmVlbic7XG5pbXBvcnQgU291bmRMaWJyYXJ5U2NyZWVuIGZyb20gJy4uL3NjcmVlbnMvd2hpdGVub2lzZS9Tb3VuZExpYnJhcnlTY3JlZW4nO1xuaW1wb3J0IE5vd1BsYXlpbmdTY3JlZW4gZnJvbSAnLi4vc2NyZWVucy93aGl0ZW5vaXNlL05vd1BsYXlpbmdTY3JlZW4nO1xuaW1wb3J0IFNlc3Npb25IaXN0b3J5U2NyZWVuIGZyb20gJy4uL3NjcmVlbnMvd2hpdGVub2lzZS9TZXNzaW9uSGlzdG9yeVNjcmVlbic7XG5pbXBvcnQgeyBTZXNzaW9uTW9uaXRvcmluZ1NjcmVlbiB9IGZyb20gJy4uL3NjcmVlbnMvc2Vzc2lvbnMvU2Vzc2lvbk1vbml0b3JpbmdTY3JlZW4nO1xuXG5jb25zdCBTdGFjayA9IGNyZWF0ZVN0YWNrTmF2aWdhdG9yPFdoaXRlTm9pc2VTdGFja1BhcmFtTGlzdD4oKTtcblxuZXhwb3J0IGNvbnN0IFdoaXRlTm9pc2VOYXZpZ2F0b3I6IFJlYWN0LkZDID0gKCkgPT4ge1xuICBjb25zdCB7IHRoZW1lIH0gPSB1c2VUaGVtZSgpO1xuXG4gIGNvbnN0IHNjcmVlbk9wdGlvbnMgPSB7XG4gICAgaGVhZGVyU3R5bGU6IHtcbiAgICAgIGJhY2tncm91bmRDb2xvcjogdGhlbWUuY29sb3JzLnN1cmZhY2UsXG4gICAgICBzaGFkb3dDb2xvcjogdGhlbWUuY29sb3JzLmJvcmRlcixcbiAgICAgIGVsZXZhdGlvbjogMSxcbiAgICB9LFxuICAgIGhlYWRlclRpbnRDb2xvcjogdGhlbWUuY29sb3JzLnRleHQsXG4gICAgaGVhZGVyVGl0bGVTdHlsZToge1xuICAgICAgZm9udFdlaWdodDogdGhlbWUudHlwb2dyYXBoeS5mb250V2VpZ2h0LnNlbWlib2xkLFxuICAgICAgZm9udFNpemU6IHRoZW1lLnR5cG9ncmFwaHkuc2l6ZXMubGcsXG4gICAgfSxcbiAgICBoZWFkZXJCYWNrVGl0bGVWaXNpYmxlOiBmYWxzZSxcbiAgICBjYXJkU3R5bGU6IHtcbiAgICAgIGJhY2tncm91bmRDb2xvcjogdGhlbWUuY29sb3JzLmJhY2tncm91bmQsXG4gICAgfSxcbiAgfTtcblxuICByZXR1cm4gKFxuICAgIDxTdGFjay5OYXZpZ2F0b3JcbiAgICAgIHNjcmVlbk9wdGlvbnM9e3NjcmVlbk9wdGlvbnN9XG4gICAgICBpbml0aWFsUm91dGVOYW1lPVwiV2hpdGVOb2lzZUhvbWVcIlxuICAgID5cbiAgICAgIDxTdGFjay5TY3JlZW5cbiAgICAgICAgbmFtZT1cIldoaXRlTm9pc2VIb21lXCJcbiAgICAgICAgY29tcG9uZW50PXtXaGl0ZU5vaXNlSG9tZVNjcmVlbn1cbiAgICAgICAgb3B0aW9ucz17e1xuICAgICAgICAgIGhlYWRlclNob3duOiBmYWxzZSwgLy8gQ3VzdG9tIGhlYWRlciBpbiBjb21wb25lbnRcbiAgICAgICAgfX1cbiAgICAgIC8+XG5cbiAgICAgIDxTdGFjay5TY3JlZW5cbiAgICAgICAgbmFtZT1cIlNvdW5kTGlicmFyeVwiXG4gICAgICAgIGNvbXBvbmVudD17U291bmRMaWJyYXJ5U2NyZWVufVxuICAgICAgICBvcHRpb25zPXt7XG4gICAgICAgICAgdGl0bGU6ICdTb3VuZCBMaWJyYXJ5JyxcbiAgICAgICAgfX1cbiAgICAgIC8+XG5cbiAgICAgIDxTdGFjay5TY3JlZW5cbiAgICAgICAgbmFtZT1cIk5vd1BsYXlpbmdcIlxuICAgICAgICBjb21wb25lbnQ9e05vd1BsYXlpbmdTY3JlZW59XG4gICAgICAgIG9wdGlvbnM9e3tcbiAgICAgICAgICB0aXRsZTogJ05vdyBQbGF5aW5nJyxcbiAgICAgICAgICBoZWFkZXJTaG93bjogZmFsc2UsXG4gICAgICAgIH19XG4gICAgICAvPlxuXG4gICAgICA8U3RhY2suU2NyZWVuXG4gICAgICAgIG5hbWU9XCJTZXNzaW9uSGlzdG9yeVwiXG4gICAgICAgIGNvbXBvbmVudD17U2Vzc2lvbkhpc3RvcnlTY3JlZW59XG4gICAgICAgIG9wdGlvbnM9e3tcbiAgICAgICAgICB0aXRsZTogJ1Nlc3Npb24gSGlzdG9yeScsXG4gICAgICAgIH19XG4gICAgICAvPlxuXG4gICAgICA8U3RhY2suU2NyZWVuXG4gICAgICAgIG5hbWU9XCJTZXNzaW9uTW9uaXRvcmluZ1wiXG4gICAgICAgIGNvbXBvbmVudD17U2Vzc2lvbk1vbml0b3JpbmdTY3JlZW59XG4gICAgICAgIG9wdGlvbnM9e3tcbiAgICAgICAgICB0aXRsZTogJ1Nlc3Npb24gTW9uaXRvcicsXG4gICAgICAgICAgaGVhZGVyU2hvd246IGZhbHNlLCAvLyBTY3JlZW4gaGFzIGl0cyBvd24gY3VzdG9tIGhlYWRlclxuICAgICAgICAgIHByZXNlbnRhdGlvbjogJ21vZGFsJyxcbiAgICAgICAgfX1cbiAgICAgIC8+XG4gICAgPC9TdGFjay5OYXZpZ2F0b3I+XG4gICk7XG59O1xuXG5leHBvcnQgZGVmYXVsdCBXaGl0ZU5vaXNlTmF2aWdhdG9yOyJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7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QyxnQkFBZ0I7SUFBQUMsUUFBQSxHQUVqQyxJQUFBSixhQUFBLENBQUFLLEdBQUEsRUFBQy9CLEtBQUssQ0FBQ2dDLE1BQU07TUFDWEMsSUFBSSxFQUFDLGdCQUFnQjtNQUNyQkMsU0FBUyxFQUFFeEMsc0JBQUEsQ0FBQXlDLG9CQUFvQjtNQUMvQkMsT0FBTyxFQUFFO1FBQ1BDLFdBQVcsRUFBRSxLQUFLLENBQUU7O0lBQ3JCLEVBQ0QsRUFFRixJQUFBWCxhQUFBLENBQUFLLEdBQUEsRUFBQy9CLEtBQUssQ0FBQ2dDLE1BQU07TUFDWEMsSUFBSSxFQUFDLGNBQWM7TUFDbkJDLFNBQVMsRUFBRXZDLG9CQUFBLENBQUEyQyxPQUFrQjtNQUM3QkYsT0FBTyxFQUFFO1FBQ1BHLEtBQUssRUFBRTs7SUFDUixFQUNELEVBRUYsSUFBQWIsYUFBQSxDQUFBSyxHQUFBLEVBQUMvQixLQUFLLENBQUNnQyxNQUFNO01BQ1hDLElBQUksRUFBQyxZQUFZO01BQ2pCQyxTQUFTLEVBQUVyQyxrQkFBQSxDQUFBeUMsT0FBZ0I7TUFDM0JGLE9BQU8sRUFBRTtRQUNQRyxLQUFLLEVBQUUsYUFBYTtRQUNwQkYsV0FBVyxFQUFFOztJQUNkLEVBQ0QsRUFFRixJQUFBWCxhQUFBLENBQUFLLEdBQUEsRUFBQy9CLEtBQUssQ0FBQ2dDLE1BQU07TUFDWEMsSUFBSSxFQUFDLGdCQUFnQjtNQUNyQkMsU0FBUyxFQUFFcEMsc0JBQUEsQ0FBQXdDLE9BQW9CO01BQy9CRixPQUFPLEVBQUU7UUFDUEcsS0FBSyxFQUFFOztJQUNSLEVBQ0QsRUFFRixJQUFBYixhQUFBLENBQUFLLEdBQUEsRUFBQy9CLEtBQUssQ0FBQ2dDLE1BQU07TUFDWEMsSUFBSSxFQUFDLG1CQUFtQjtNQUN4QkMsU0FBUyxFQUFFbkMseUJBQUEsQ0FBQXlDLHVCQUF1QjtNQUNsQ0osT0FBTyxFQUFFO1FBQ1BHLEtBQUssRUFBRSxpQkFBaUI7UUFDeEJGLFdBQVcsRUFBRSxLQUFLO1FBQUU7UUFDcEJJLFlBQVksRUFBRTs7SUFDZixFQUNEO0VBQUEsRUFDYztBQUV0QixDQUFDO0FBQUM7QUFBQXJELGNBQUEsR0FBQUcsQ0FBQTtBQXJFV21ELE9BQUEsQ0FBQXhDLG1CQUFtQixHQUFBQSxtQkFBQTtBQXFFOUI7QUFBQWQsY0FBQSxHQUFBRyxDQUFBO0FBRUZtRCxPQUFBLENBQUFKLE9BQUEsR0FBZUksT0FBQSxDQUFBeEMsbUJBQW1CIiwiaWdub3JlTGlzdCI6W119

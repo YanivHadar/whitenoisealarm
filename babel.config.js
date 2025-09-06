@@ -6,6 +6,9 @@ module.exports = function (api) {
       'babel-preset-expo'
     ],
     plugins: [
+      // React Native Reanimated plugin (must be listed last)
+      'react-native-worklets/plugin',
+      
       // Performance optimizations - root imports for cleaner imports
       [
         'babel-plugin-root-import',

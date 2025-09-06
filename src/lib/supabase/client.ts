@@ -203,7 +203,7 @@ export const createRealtimeSubscription = <T = any>(
         callback?.(payload);
       }
     )
-    .on('error', (error) => {
+    .on('error', (error: any) => {
       console.error(`Real-time subscription error for ${table}:`, error);
     })
     .subscribe((status) => {

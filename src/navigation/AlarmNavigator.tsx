@@ -13,6 +13,8 @@ import { AlarmStackParamList } from '../types/navigation';
 // Import screens
 import { AlarmListScreen } from '../screens/alarms/AlarmListScreen';
 import { CreateAlarmScreen } from '../screens/alarms/CreateAlarmScreen';
+import { EditAlarmScreen } from '../screens/alarms/EditAlarmScreen';
+import { SessionMonitoringScreen } from '../screens/sessions/SessionMonitoringScreen';
 
 const Stack = createStackNavigator<AlarmStackParamList>();
 
@@ -27,8 +29,8 @@ export const AlarmNavigator: React.FC = () => {
     },
     headerTintColor: theme.colors.text,
     headerTitleStyle: {
-      fontWeight: theme.fontWeight.semibold,
-      fontSize: theme.fontSize.lg,
+      fontWeight: theme.typography.fontWeight.semibold,
+      fontSize: theme.typography.sizes.lg,
     },
     headerBackTitleVisible: false,
     cardStyle: {
@@ -60,9 +62,19 @@ export const AlarmNavigator: React.FC = () => {
 
       <Stack.Screen
         name="EditAlarm"
-        component={CreateAlarmScreen}
+        component={EditAlarmScreen}
         options={{
           title: 'Edit Alarm',
+        }}
+      />
+
+      <Stack.Screen
+        name="SessionMonitoring"
+        component={SessionMonitoringScreen}
+        options={{
+          title: 'Session Monitor',
+          headerShown: false, // Screen has its own custom header
+          presentation: 'modal',
         }}
       />
     </Stack.Navigator>

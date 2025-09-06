@@ -66,9 +66,9 @@ beforeAll(async () => {
           sound: {
             playAsync: jest.fn().mockResolvedValue({ status: 'ok' }),
             stopAsync: jest.fn().mockResolvedValue({ status: 'ok' }),
-            unloadAsync: jest.fn().mockResolvedValue(),
-            setVolumeAsync: jest.fn().mockResolvedValue(),
-            setPositionAsync: jest.fn().mockResolvedValue(),
+            unloadAsync: jest.fn().mockResolvedValue(undefined),
+            setVolumeAsync: jest.fn().mockResolvedValue(undefined),
+            setPositionAsync: jest.fn().mockResolvedValue(undefined),
             getStatusAsync: jest.fn().mockResolvedValue({
               isLoaded: true,
               isPlaying: false,
@@ -99,13 +99,13 @@ beforeAll(async () => {
   // Mock AsyncStorage for persistence testing
   jest.doMock('@react-native-async-storage/async-storage', () => ({
     getItem: jest.fn().mockResolvedValue(null),
-    setItem: jest.fn().mockResolvedValue(),
-    removeItem: jest.fn().mockResolvedValue(),
-    clear: jest.fn().mockResolvedValue(),
+    setItem: jest.fn().mockResolvedValue(undefined),
+    removeItem: jest.fn().mockResolvedValue(undefined),
+    clear: jest.fn().mockResolvedValue(undefined),
     getAllKeys: jest.fn().mockResolvedValue([]),
     multiGet: jest.fn().mockResolvedValue([]),
-    multiSet: jest.fn().mockResolvedValue(),
-    multiRemove: jest.fn().mockResolvedValue()
+    multiSet: jest.fn().mockResolvedValue(undefined),
+    multiRemove: jest.fn().mockResolvedValue(undefined)
   }));
 
   // Mock Expo Device for platform detection
@@ -183,7 +183,7 @@ afterEach(async () => {
   }),
   
   // Test environment checks
-  isReliabilityTestMode: () => process.env.NODE_ENV === 'test' && global.__RELIABILITY_TEST_MODE__,
+  isReliabilityTestMode: () => process.env.NODE_ENV === 'test' && (global as any).__RELIABILITY_TEST_MODE__,
   
   // Performance measurement utilities
   measurePerformance: async (name: string, fn: () => Promise<any>) => {

@@ -192,7 +192,7 @@ export const ActiveSessionSchema = z.object({
   white_noise_file_url: z.string().url().nullable(),
   white_noise_volume: volumeSchema,
   progress_percentage: z.number().min(0).max(100),
-  metadata: z.record(z.any()).nullable(),
+  metadata: z.record(z.string(), z.any()).nullable(),
   created_at: z.string().datetime(),
   updated_at: z.string().datetime(),
 });
@@ -212,7 +212,7 @@ export const ActiveSessionInsertSchema = z.object({
   white_noise_file_url: z.string().url().nullable().optional(),
   white_noise_volume: volumeSchema.optional().default(0.5),
   progress_percentage: z.number().min(0).max(100).optional().default(0),
-  metadata: z.record(z.any()).nullable().optional(),
+  metadata: z.record(z.string(), z.any()).nullable().optional(),
 });
 
 export const ActiveSessionUpdateSchema = z.object({
@@ -220,7 +220,7 @@ export const ActiveSessionUpdateSchema = z.object({
   ended_at: z.string().datetime().nullable().optional(),
   duration_seconds: nonNegativeIntSchema.nullable().optional(),
   progress_percentage: z.number().min(0).max(100).optional(),
-  metadata: z.record(z.any()).nullable().optional(),
+  metadata: z.record(z.string(), z.any()).nullable().optional(),
   updated_at: z.string().datetime().optional(),
 });
 

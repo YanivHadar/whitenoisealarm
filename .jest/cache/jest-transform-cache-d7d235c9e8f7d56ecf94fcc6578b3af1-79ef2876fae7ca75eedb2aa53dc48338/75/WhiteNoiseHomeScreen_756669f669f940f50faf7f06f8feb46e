@@ -1,0 +1,352 @@
+2dd9e94c5353387812998f85b3fc78d9
+"use strict";
+
+/* istanbul ignore next */
+function cov_p1n7u4agv() {
+  var path = "/Users/yanivhadar/Desktop/White Noise Alarm/AlarmWhiteNoiseApp/src/screens/whitenoise/WhiteNoiseHomeScreen.tsx";
+  var hash = "541ab756929d9a5c388f051d58b7111efa3fa1ff";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/yanivhadar/Desktop/White Noise Alarm/AlarmWhiteNoiseApp/src/screens/whitenoise/WhiteNoiseHomeScreen.tsx",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 38
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 22
+        },
+        end: {
+          line: 4,
+          column: 50
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 23
+        },
+        end: {
+          line: 5,
+          column: 46
+        }
+      },
+      "4": {
+        start: {
+          line: 6,
+          column: 24
+        },
+        end: {
+          line: 6,
+          column: 75
+        }
+      },
+      "5": {
+        start: {
+          line: 7,
+          column: 23
+        },
+        end: {
+          line: 7,
+          column: 52
+        }
+      },
+      "6": {
+        start: {
+          line: 8,
+          column: 29
+        },
+        end: {
+          line: 12,
+          column: 1
+        }
+      },
+      "7": {
+        start: {
+          line: 9,
+          column: 22
+        },
+        end: {
+          line: 9,
+          column: 53
+        }
+      },
+      "8": {
+        start: {
+          line: 10,
+          column: 19
+        },
+        end: {
+          line: 10,
+          column: 38
+        }
+      },
+      "9": {
+        start: {
+          line: 11,
+          column: 4
+        },
+        end: {
+          line: 11,
+          column: 670
+        }
+      },
+      "10": {
+        start: {
+          line: 13,
+          column: 0
+        },
+        end: {
+          line: 13,
+          column: 52
+        }
+      },
+      "11": {
+        start: {
+          line: 14,
+          column: 21
+        },
+        end: {
+          line: 44,
+          column: 2
+        }
+      },
+      "12": {
+        start: {
+          line: 14,
+          column: 32
+        },
+        end: {
+          line: 44,
+          column: 2
+        }
+      },
+      "13": {
+        start: {
+          line: 45,
+          column: 0
+        },
+        end: {
+          line: 45,
+          column: 47
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 8,
+            column: 29
+          },
+          end: {
+            line: 8,
+            column: 30
+          }
+        },
+        loc: {
+          start: {
+            line: 8,
+            column: 49
+          },
+          end: {
+            line: 12,
+            column: 1
+          }
+        },
+        line: 8
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 14,
+            column: 21
+          },
+          end: {
+            line: 14,
+            column: 22
+          }
+        },
+        loc: {
+          start: {
+            line: 14,
+            column: 32
+          },
+          end: {
+            line: 44,
+            column: 2
+          }
+        },
+        line: 14
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "/Users/yanivhadar/Desktop/White Noise Alarm/AlarmWhiteNoiseApp/src/screens/whitenoise/WhiteNoiseHomeScreen.tsx",
+      mappings: ";;;;AAQA,+CAAoE;AAEpE,4EAAoE;AACpE,qDAA8C;AAIvC,MAAM,oBAAoB,GAAwC,CAAC,EAAE,UAAU,EAAE,EAAE,EAAE;IAC1F,MAAM,EAAE,KAAK,EAAE,GAAG,IAAA,wBAAQ,GAAE,CAAC;IAE7B,MAAM,MAAM,GAAG,YAAY,CAAC,KAAK,CAAC,CAAC;IAEnC,OAAO,CACL,uBAAC,2BAAY,IAAC,KAAK,EAAE,MAAM,CAAC,SAAS,YACnC,wBAAC,mBAAI,IAAC,KAAK,EAAE,MAAM,CAAC,OAAO,aACzB,uBAAC,uBAAQ,IAAC,IAAI,EAAC,eAAe,EAAC,IAAI,EAAE,EAAE,EAAE,KAAK,EAAE,KAAK,CAAC,MAAM,CAAC,OAAO,GAAI,EACxE,uBAAC,mBAAI,IAAC,KAAK,EAAE,MAAM,CAAC,KAAK,4BAAoB,EAC7C,uBAAC,mBAAI,IAAC,KAAK,EAAE,MAAM,CAAC,QAAQ,gEAErB,EACP,uBAAC,mBAAI,IAAC,KAAK,EAAE,MAAM,CAAC,UAAU,iEAEvB,IACF,GACM,CAChB,CAAC;AACJ,CAAC,CAAC;AAnBW,QAAA,oBAAoB,wBAmB/B;AAEF,MAAM,YAAY,GAAG,CAAC,KAAU,EAAE,EAAE,CAAC,yBAAU,CAAC,MAAM,CAAC;IACrD,SAAS,EAAE;QACT,IAAI,EAAE,CAAC;QACP,eAAe,EAAE,KAAK,CAAC,MAAM,CAAC,UAAU;KACzC;IACD,OAAO,EAAE;QACP,IAAI,EAAE,CAAC;QACP,UAAU,EAAE,QAAQ;QACpB,cAAc,EAAE,QAAQ;QACxB,OAAO,EAAE,KAAK,CAAC,OAAO,CAAC,CAAC,CAAC;KAC1B;IACD,KAAK,EAAE;QACL,QAAQ,EAAE,KAAK,CAAC,QAAQ,CAAC,KAAK,CAAC;QAC/B,UAAU,EAAE,KAAK,CAAC,UAAU,CAAC,IAAI;QACjC,KAAK,EAAE,KAAK,CAAC,MAAM,CAAC,IAAI;QACxB,SAAS,EAAE,KAAK,CAAC,OAAO,CAAC,CAAC,CAAC;QAC3B,YAAY,EAAE,KAAK,CAAC,OAAO,CAAC,CAAC,CAAC;KAC/B;IACD,QAAQ,EAAE;QACR,QAAQ,EAAE,KAAK,CAAC,QAAQ,CAAC,IAAI;QAC7B,KAAK,EAAE,KAAK,CAAC,MAAM,CAAC,aAAa;QACjC,SAAS,EAAE,QAAQ;QACnB,YAAY,EAAE,KAAK,CAAC,OAAO,CAAC,CAAC,CAAC;KAC/B;IACD,UAAU,EAAE;QACV,QAAQ,EAAE,KAAK,CAAC,QAAQ,CAAC,EAAE;QAC3B,KAAK,EAAE,KAAK,CAAC,MAAM,CAAC,OAAO;QAC3B,SAAS,EAAE,QAAQ;QACnB,SAAS,EAAE,QAAQ;KACpB;CACF,CAAC,CAAC;AAEH,kBAAe,4BAAoB,CAAC",
+      names: [],
+      sources: ["/Users/yanivhadar/Desktop/White Noise Alarm/AlarmWhiteNoiseApp/src/screens/whitenoise/WhiteNoiseHomeScreen.tsx"],
+      sourcesContent: ["/**\n * White Noise Home Screen\n * \n * Main white noise interface with sound selection,\n * session management, and playback controls.\n */\n\nimport React from 'react';\nimport { View, Text, StyleSheet, SafeAreaView } from 'react-native';\nimport { WhiteNoiseStackScreenProps } from '../../types/navigation';\nimport { useTheme } from '../../components/providers/ThemeProvider';\nimport { Ionicons } from '@expo/vector-icons';\n\ntype WhiteNoiseHomeScreenProps = WhiteNoiseStackScreenProps<'WhiteNoiseHome'>;\n\nexport const WhiteNoiseHomeScreen: React.FC<WhiteNoiseHomeScreenProps> = ({ navigation }) => {\n  const { theme } = useTheme();\n\n  const styles = createStyles(theme);\n\n  return (\n    <SafeAreaView style={styles.container}>\n      <View style={styles.content}>\n        <Ionicons name=\"musical-notes\" size={64} color={theme.colors.primary} />\n        <Text style={styles.title}>White Noise</Text>\n        <Text style={styles.subtitle}>\n          Soothing sounds for better sleep and relaxation\n        </Text>\n        <Text style={styles.comingSoon}>\n          Full white noise functionality coming in Phase 5\n        </Text>\n      </View>\n    </SafeAreaView>\n  );\n};\n\nconst createStyles = (theme: any) => StyleSheet.create({\n  container: {\n    flex: 1,\n    backgroundColor: theme.colors.background,\n  },\n  content: {\n    flex: 1,\n    alignItems: 'center',\n    justifyContent: 'center',\n    padding: theme.spacing[8],\n  },\n  title: {\n    fontSize: theme.fontSize['2xl'],\n    fontWeight: theme.fontWeight.bold,\n    color: theme.colors.text,\n    marginTop: theme.spacing[4],\n    marginBottom: theme.spacing[2],\n  },\n  subtitle: {\n    fontSize: theme.fontSize.base,\n    color: theme.colors.textSecondary,\n    textAlign: 'center',\n    marginBottom: theme.spacing[4],\n  },\n  comingSoon: {\n    fontSize: theme.fontSize.sm,\n    color: theme.colors.primary,\n    textAlign: 'center',\n    fontStyle: 'italic',\n  },\n});\n\nexport default WhiteNoiseHomeScreen;"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "541ab756929d9a5c388f051d58b7111efa3fa1ff"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_p1n7u4agv = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+cov_p1n7u4agv();
+cov_p1n7u4agv().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* istanbul ignore next */
+cov_p1n7u4agv().s[1]++;
+exports.WhiteNoiseHomeScreen = void 0;
+const jsx_runtime_1 =
+/* istanbul ignore next */
+(cov_p1n7u4agv().s[2]++, require("react/jsx-runtime"));
+const react_native_1 =
+/* istanbul ignore next */
+(cov_p1n7u4agv().s[3]++, require("react-native"));
+const ThemeProvider_1 =
+/* istanbul ignore next */
+(cov_p1n7u4agv().s[4]++, require("../../components/providers/ThemeProvider"));
+const vector_icons_1 =
+/* istanbul ignore next */
+(cov_p1n7u4agv().s[5]++, require("@expo/vector-icons"));
+/* istanbul ignore next */
+cov_p1n7u4agv().s[6]++;
+const WhiteNoiseHomeScreen = ({
+  navigation
+}) => {
+  /* istanbul ignore next */
+  cov_p1n7u4agv().f[0]++;
+  const {
+    theme
+  } =
+  /* istanbul ignore next */
+  (cov_p1n7u4agv().s[7]++, (0, ThemeProvider_1.useTheme)());
+  const styles =
+  /* istanbul ignore next */
+  (cov_p1n7u4agv().s[8]++, createStyles(theme));
+  /* istanbul ignore next */
+  cov_p1n7u4agv().s[9]++;
+  return (0, jsx_runtime_1.jsx)(react_native_1.SafeAreaView, {
+    style: styles.container,
+    children: (0, jsx_runtime_1.jsxs)(react_native_1.View, {
+      style: styles.content,
+      children: [(0, jsx_runtime_1.jsx)(vector_icons_1.Ionicons, {
+        name: "musical-notes",
+        size: 64,
+        color: theme.colors.primary
+      }), (0, jsx_runtime_1.jsx)(react_native_1.Text, {
+        style: styles.title,
+        children: "White Noise"
+      }), (0, jsx_runtime_1.jsx)(react_native_1.Text, {
+        style: styles.subtitle,
+        children: "Soothing sounds for better sleep and relaxation"
+      }), (0, jsx_runtime_1.jsx)(react_native_1.Text, {
+        style: styles.comingSoon,
+        children: "Full white noise functionality coming in Phase 5"
+      })]
+    })
+  });
+};
+/* istanbul ignore next */
+cov_p1n7u4agv().s[10]++;
+exports.WhiteNoiseHomeScreen = WhiteNoiseHomeScreen;
+/* istanbul ignore next */
+cov_p1n7u4agv().s[11]++;
+const createStyles = theme => {
+  /* istanbul ignore next */
+  cov_p1n7u4agv().f[1]++;
+  cov_p1n7u4agv().s[12]++;
+  return react_native_1.StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: theme.colors.background
+    },
+    content: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: theme.spacing[8]
+    },
+    title: {
+      fontSize: theme.fontSize['2xl'],
+      fontWeight: theme.fontWeight.bold,
+      color: theme.colors.text,
+      marginTop: theme.spacing[4],
+      marginBottom: theme.spacing[2]
+    },
+    subtitle: {
+      fontSize: theme.fontSize.base,
+      color: theme.colors.textSecondary,
+      textAlign: 'center',
+      marginBottom: theme.spacing[4]
+    },
+    comingSoon: {
+      fontSize: theme.fontSize.sm,
+      color: theme.colors.primary,
+      textAlign: 'center',
+      fontStyle: 'italic'
+    }
+  });
+};
+/* istanbul ignore next */
+cov_p1n7u4agv().s[13]++;
+exports.default = exports.WhiteNoiseHomeScreen;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJjb3ZfcDFuN3U0YWd2IiwiYWN0dWFsQ292ZXJhZ2UiLCJzIiwicmVhY3RfbmF0aXZlXzEiLCJyZXF1aXJlIiwiVGhlbWVQcm92aWRlcl8xIiwidmVjdG9yX2ljb25zXzEiLCJXaGl0ZU5vaXNlSG9tZVNjcmVlbiIsIm5hdmlnYXRpb24iLCJmIiwidGhlbWUiLCJ1c2VUaGVtZSIsInN0eWxlcyIsImNyZWF0ZVN0eWxlcyIsImpzeF9ydW50aW1lXzEiLCJqc3giLCJTYWZlQXJlYVZpZXciLCJzdHlsZSIsImNvbnRhaW5lciIsImNoaWxkcmVuIiwianN4cyIsIlZpZXciLCJjb250ZW50IiwiSW9uaWNvbnMiLCJuYW1lIiwic2l6ZSIsImNvbG9yIiwiY29sb3JzIiwicHJpbWFyeSIsIlRleHQiLCJ0aXRsZSIsInN1YnRpdGxlIiwiY29taW5nU29vbiIsImV4cG9ydHMiLCJTdHlsZVNoZWV0IiwiY3JlYXRlIiwiZmxleCIsImJhY2tncm91bmRDb2xvciIsImJhY2tncm91bmQiLCJhbGlnbkl0ZW1zIiwianVzdGlmeUNvbnRlbnQiLCJwYWRkaW5nIiwic3BhY2luZyIsImZvbnRTaXplIiwiZm9udFdlaWdodCIsImJvbGQiLCJ0ZXh0IiwibWFyZ2luVG9wIiwibWFyZ2luQm90dG9tIiwiYmFzZSIsInRleHRTZWNvbmRhcnkiLCJ0ZXh0QWxpZ24iLCJzbSIsImZvbnRTdHlsZSIsImRlZmF1bHQiXSwic291cmNlcyI6WyIvVXNlcnMveWFuaXZoYWRhci9EZXNrdG9wL1doaXRlIE5vaXNlIEFsYXJtL0FsYXJtV2hpdGVOb2lzZUFwcC9zcmMvc2NyZWVucy93aGl0ZW5vaXNlL1doaXRlTm9pc2VIb21lU2NyZWVuLnRzeCJdLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIFdoaXRlIE5vaXNlIEhvbWUgU2NyZWVuXG4gKiBcbiAqIE1haW4gd2hpdGUgbm9pc2UgaW50ZXJmYWNlIHdpdGggc291bmQgc2VsZWN0aW9uLFxuICogc2Vzc2lvbiBtYW5hZ2VtZW50LCBhbmQgcGxheWJhY2sgY29udHJvbHMuXG4gKi9cblxuaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IFZpZXcsIFRleHQsIFN0eWxlU2hlZXQsIFNhZmVBcmVhVmlldyB9IGZyb20gJ3JlYWN0LW5hdGl2ZSc7XG5pbXBvcnQgeyBXaGl0ZU5vaXNlU3RhY2tTY3JlZW5Qcm9wcyB9IGZyb20gJy4uLy4uL3R5cGVzL25hdmlnYXRpb24nO1xuaW1wb3J0IHsgdXNlVGhlbWUgfSBmcm9tICcuLi8uLi9jb21wb25lbnRzL3Byb3ZpZGVycy9UaGVtZVByb3ZpZGVyJztcbmltcG9ydCB7IElvbmljb25zIH0gZnJvbSAnQGV4cG8vdmVjdG9yLWljb25zJztcblxudHlwZSBXaGl0ZU5vaXNlSG9tZVNjcmVlblByb3BzID0gV2hpdGVOb2lzZVN0YWNrU2NyZWVuUHJvcHM8J1doaXRlTm9pc2VIb21lJz47XG5cbmV4cG9ydCBjb25zdCBXaGl0ZU5vaXNlSG9tZVNjcmVlbjogUmVhY3QuRkM8V2hpdGVOb2lzZUhvbWVTY3JlZW5Qcm9wcz4gPSAoeyBuYXZpZ2F0aW9uIH0pID0+IHtcbiAgY29uc3QgeyB0aGVtZSB9ID0gdXNlVGhlbWUoKTtcblxuICBjb25zdCBzdHlsZXMgPSBjcmVhdGVTdHlsZXModGhlbWUpO1xuXG4gIHJldHVybiAoXG4gICAgPFNhZmVBcmVhVmlldyBzdHlsZT17c3R5bGVzLmNvbnRhaW5lcn0+XG4gICAgICA8VmlldyBzdHlsZT17c3R5bGVzLmNvbnRlbnR9PlxuICAgICAgICA8SW9uaWNvbnMgbmFtZT1cIm11c2ljYWwtbm90ZXNcIiBzaXplPXs2NH0gY29sb3I9e3RoZW1lLmNvbG9ycy5wcmltYXJ5fSAvPlxuICAgICAgICA8VGV4dCBzdHlsZT17c3R5bGVzLnRpdGxlfT5XaGl0ZSBOb2lzZTwvVGV4dD5cbiAgICAgICAgPFRleHQgc3R5bGU9e3N0eWxlcy5zdWJ0aXRsZX0+XG4gICAgICAgICAgU29vdGhpbmcgc291bmRzIGZvciBiZXR0ZXIgc2xlZXAgYW5kIHJlbGF4YXRpb25cbiAgICAgICAgPC9UZXh0PlxuICAgICAgICA8VGV4dCBzdHlsZT17c3R5bGVzLmNvbWluZ1Nvb259PlxuICAgICAgICAgIEZ1bGwgd2hpdGUgbm9pc2UgZnVuY3Rpb25hbGl0eSBjb21pbmcgaW4gUGhhc2UgNVxuICAgICAgICA8L1RleHQ+XG4gICAgICA8L1ZpZXc+XG4gICAgPC9TYWZlQXJlYVZpZXc+XG4gICk7XG59O1xuXG5jb25zdCBjcmVhdGVTdHlsZXMgPSAodGhlbWU6IGFueSkgPT4gU3R5bGVTaGVldC5jcmVhdGUoe1xuICBjb250YWluZXI6IHtcbiAgICBmbGV4OiAxLFxuICAgIGJhY2tncm91bmRDb2xvcjogdGhlbWUuY29sb3JzLmJhY2tncm91bmQsXG4gIH0sXG4gIGNvbnRlbnQ6IHtcbiAgICBmbGV4OiAxLFxuICAgIGFsaWduSXRlbXM6ICdjZW50ZXInLFxuICAgIGp1c3RpZnlDb250ZW50OiAnY2VudGVyJyxcbiAgICBwYWRkaW5nOiB0aGVtZS5zcGFjaW5nWzhdLFxuICB9LFxuICB0aXRsZToge1xuICAgIGZvbnRTaXplOiB0aGVtZS5mb250U2l6ZVsnMnhsJ10sXG4gICAgZm9udFdlaWdodDogdGhlbWUuZm9udFdlaWdodC5ib2xkLFxuICAgIGNvbG9yOiB0aGVtZS5jb2xvcnMudGV4dCxcbiAgICBtYXJnaW5Ub3A6IHRoZW1lLnNwYWNpbmdbNF0sXG4gICAgbWFyZ2luQm90dG9tOiB0aGVtZS5zcGFjaW5nWzJdLFxuICB9LFxuICBzdWJ0aXRsZToge1xuICAgIGZvbnRTaXplOiB0aGVtZS5mb250U2l6ZS5iYXNlLFxuICAgIGNvbG9yOiB0aGVtZS5jb2xvcnMudGV4dFNlY29uZGFyeSxcbiAgICB0ZXh0QWxpZ246ICdjZW50ZXInLFxuICAgIG1hcmdpbkJvdHRvbTogdGhlbWUuc3BhY2luZ1s0XSxcbiAgfSxcbiAgY29taW5nU29vbjoge1xuICAgIGZvbnRTaXplOiB0aGVtZS5mb250U2l6ZS5zbSxcbiAgICBjb2xvcjogdGhlbWUuY29sb3JzLnByaW1hcnksXG4gICAgdGV4dEFsaWduOiAnY2VudGVyJyxcbiAgICBmb250U3R5bGU6ICdpdGFsaWMnLFxuICB9LFxufSk7XG5cbmV4cG9ydCBkZWZhdWx0IFdoaXRlTm9pc2VIb21lU2NyZWVuOyJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztJQXNDUTtJQUFBQSxhQUFBLFlBQUFBLENBQUE7TUFBQSxPQUFBQyxjQUFBO0lBQUE7RUFBQTtFQUFBLE9BQUFBLGNBQUE7QUFBQTtBQUFBRCxhQUFBO0FBQUFBLGFBQUEsR0FBQUUsQ0FBQTs7Ozs7Ozs7OztBQTlCUixNQUFBQyxjQUFBO0FBQUE7QUFBQSxDQUFBSCxhQUFBLEdBQUFFLENBQUEsT0FBQUUsT0FBQTtBQUVBLE1BQUFDLGVBQUE7QUFBQTtBQUFBLENBQUFMLGFBQUEsR0FBQUUsQ0FBQSxPQUFBRSxPQUFBO0FBQ0EsTUFBQUUsY0FBQTtBQUFBO0FBQUEsQ0FBQU4sYUFBQSxHQUFBRSxDQUFBLE9BQUFFLE9BQUE7QUFBOEM7QUFBQUosYUFBQSxHQUFBRSxDQUFBO0FBSXZDLE1BQU1LLG9CQUFvQixHQUF3Q0EsQ0FBQztFQUFFQztBQUFVLENBQUUsS0FBSTtFQUFBO0VBQUFSLGFBQUEsR0FBQVMsQ0FBQTtFQUMxRixNQUFNO0lBQUVDO0VBQUssQ0FBRTtFQUFBO0VBQUEsQ0FBQVYsYUFBQSxHQUFBRSxDQUFBLE9BQUcsSUFBQUcsZUFBQSxDQUFBTSxRQUFRLEdBQUU7RUFFNUIsTUFBTUMsTUFBTTtFQUFBO0VBQUEsQ0FBQVosYUFBQSxHQUFBRSxDQUFBLE9BQUdXLFlBQVks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

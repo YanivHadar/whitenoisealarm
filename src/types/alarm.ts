@@ -15,7 +15,8 @@ export type RepeatPattern = Database['public']['Enums']['repeat_pattern'];
 export type WhiteNoiseCategory = Database['public']['Enums']['white_noise_category'];
 
 // Extended alarm types for app logic
-export interface AlarmWithStatus extends Database['public']['Tables']['alarms']['Row'] {
+type AlarmRowType = Database['public']['Tables']['alarms']['Row'];
+export interface AlarmWithStatus extends AlarmRowType {
   // Computed fields
   is_active: boolean;
   is_snoozed: boolean;

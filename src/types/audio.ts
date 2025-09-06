@@ -125,6 +125,16 @@ export interface SoundFile {
 }
 
 /**
+ * Custom loop point configuration for advanced audio control
+ */
+export interface CustomLoopPoint {
+  soundId: string;
+  startTime: number; // seconds
+  endTime: number; // seconds
+  enabled: boolean;
+}
+
+/**
  * Audio format specifications
  */
 export type AudioFormat = 'mp3' | 'wav' | 'aac' | 'm4a' | 'ogg' | 'flac';
@@ -833,4 +843,4 @@ export interface AudioOperationResult<T = any> {
 /**
  * Re-export enums from database for convenience
  */
-export type { WhiteNoiseCategory as DBWhiteNoiseCategory } from './database';
+// WhiteNoiseCategory is defined above in line 598-606

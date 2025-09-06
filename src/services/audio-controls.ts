@@ -225,21 +225,100 @@ export class AudioControls {
    */
   private async detectCurrentAudioRoute(): Promise<AudioRoute> {
     try {
-      // Platform-specific route detection would go here
-      // For now, return a reasonable default
-      // In a real implementation, you'd use platform-specific APIs
-      
       if (Platform.OS === 'ios') {
-        // iOS-specific route detection using AVAudioSession
-        return 'speaker'; // Placeholder
+        // iOS-specific route detection using expo-av and device detection
+        try {
+          // Check if wired headphones are connected
+          const deviceInfo = await Device.getDeviceTypeAsync();
+          
+          // Use Audio.getStatusAsync to check audio session details
+          // Note: expo-av doesn't directly expose AVAudioSession route info
+          // but we can infer from other indicators
+          
+          // For iOS, we would need to create a native module or use 
+          // react-native-device-info for more detailed detection
+          // For now, we'll use a heuristic approach
+          
+          // Check if we're in a call (would indicate phone speaker)
+          // This is a simplified implementation
+          return await this.detectIOSAudioRoute();
+        } catch (iosError) {
+          console.warn('iOS audio route detection failed:', iosError);
+          return 'speaker';
+        }
       } else if (Platform.OS === 'android') {
-        // Android-specific route detection using AudioManager
-        return 'speaker'; // Placeholder
+        // Android-specific route detection
+        try {
+          return await this.detectAndroidAudioRoute();
+        } catch (androidError) {
+          console.warn('Android audio route detection failed:', androidError);
+          return 'speaker';
+        }
       }
       
       return 'speaker';
     } catch (error) {
       console.warn('Failed to detect audio route:', error);
+      return 'speaker';
+    }
+  }
+
+  /**
+   * iOS-specific audio route detection
+   */
+  private async detectIOSAudioRoute(): Promise<AudioRoute> {
+    try {
+      // In a real implementation, this would use native iOS APIs
+      // through a custom Expo module or react-native bridge
+      
+      // For now, we'll use available Expo APIs to make educated guesses
+      const audioMode = await Audio.getAudioModeAsync();
+      
+      // Check if we're allowing recording (might indicate headphones with mic)
+      if (audioMode.allowsRecordingIOS) {
+        // Could indicate headphones/AirPods with microphone
+        return 'headphones';
+      }
+      
+      // Check if playing through earpiece
+      if (audioMode.playsInSilentModeIOS === false) {
+        return 'earpiece';
+      }
+      
+      // Default to speaker for iOS
+      return 'speaker';
+    } catch (error) {
+      console.warn('iOS route detection error:', error);
+      return 'speaker';
+    }
+  }
+
+  /**
+   * Android-specific audio route detection
+   */
+  private async detectAndroidAudioRoute(): Promise<AudioRoute> {
+    try {
+      // In a real implementation, this would use Android AudioManager APIs
+      // through a custom Expo module or react-native bridge
+      
+      // For now, we'll use available Expo APIs and device info
+      const audioMode = await Audio.getAudioModeAsync();
+      
+      // Check if ducking is enabled (might indicate headphones)
+      if (audioMode.shouldDuckAndroid === false) {
+        // Might indicate exclusive audio usage (Bluetooth/headphones)
+        return 'bluetooth';
+      }
+      
+      // Check if playing through earpiece is disabled
+      if (audioMode.playThroughEarpieceAndroid === false) {
+        return 'headphones';
+      }
+      
+      // Default to speaker for Android
+      return 'speaker';
+    } catch (error) {
+      console.warn('Android route detection error:', error);
       return 'speaker';
     }
   }

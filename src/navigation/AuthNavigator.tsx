@@ -15,6 +15,9 @@ import { WelcomeScreen } from '../screens/auth/WelcomeScreen';
 import { SignInForm } from '../components/auth/SignInForm';
 import { SignUpForm } from '../components/auth/SignUpForm';
 import { ForgotPasswordForm } from '../components/auth/ForgotPasswordForm';
+import { BiometricSetupScreen } from '../screens/auth/BiometricSetupScreen';
+import { OnboardingCompleteScreen } from '../screens/auth/OnboardingCompleteScreen';
+import SleepPreferencesScreen from '../screens/auth/SleepPreferencesScreen';
 
 const Stack = createStackNavigator<AuthStackParamList>();
 
@@ -29,8 +32,8 @@ export const AuthNavigator: React.FC = () => {
     },
     headerTintColor: theme.colors.text,
     headerTitleStyle: {
-      fontWeight: theme.fontWeight.semibold,
-      fontSize: theme.fontSize.lg,
+      fontWeight: theme.typography.fontWeight.semibold,
+      fontSize: theme.typography.sizes.lg,
     },
     headerBackTitleVisible: false,
     cardStyle: {
@@ -49,14 +52,14 @@ export const AuthNavigator: React.FC = () => {
   const SignUpScreen = ({ navigation }: any) => (
     <SignUpForm 
       onSuccess={() => {}} 
-      onSignIn={() => navigation.navigate('SignIn')} 
+      onSignInPress={() => navigation.navigate('SignIn')} 
     />
   );
 
   const ForgotPasswordScreen = ({ navigation }: any) => (
     <ForgotPasswordForm 
       onSuccess={() => navigation.navigate('SignIn')} 
-      onBackToSignIn={() => navigation.navigate('SignIn')} 
+      onBackPress={() => navigation.navigate('SignIn')} 
     />
   );
 
@@ -94,6 +97,25 @@ export const AuthNavigator: React.FC = () => {
         component={ForgotPasswordScreen}
         options={{
           title: 'Reset Password',
+        }}
+      />
+      
+      <Stack.Screen
+        name="BiometricSetup"
+        component={BiometricSetupScreen}
+        options={{
+          title: 'Security Setup',
+          headerShown: false,
+        }}
+      />
+      
+      <Stack.Screen
+        name="OnboardingComplete"
+        component={OnboardingCompleteScreen}
+        options={{
+          title: 'Welcome!',
+          headerShown: false,
+          gestureEnabled: false,
         }}
       />
     </Stack.Navigator>

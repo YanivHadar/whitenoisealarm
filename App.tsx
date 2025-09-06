@@ -5,6 +5,9 @@
  * authentication, and theme management.
  */
 
+// React Native crypto polyfill
+import 'react-native-get-random-values';
+
 import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';

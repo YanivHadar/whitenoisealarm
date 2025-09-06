@@ -32,7 +32,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/76</span>
+                <span class='fraction'>0/59</span>
             </div>
         
             
@@ -916,7 +916,7 @@ export interface BiometricSettings {
 <span class="fstat-no" title="function not covered" >  private constructor() {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >  static </span>getInstance(): BiometricService {
-<span class="cstat-no" title="statement not covered" >    if (!BiometricService.instance) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (!BiometricService.instance) {</span>
 <span class="cstat-no" title="statement not covered" >      BiometricService.instance = new BiometricService();</span>
     }
 <span class="cstat-no" title="statement not covered" >    return BiometricService.instance;</span>
@@ -960,7 +960,7 @@ export interface BiometricSettings {
    * Get current biometric capabilities
    */
 <span class="fstat-no" title="function not covered" >  async </span>getCapabilities(): Promise&lt;BiometricCapabilities&gt; {
-<span class="cstat-no" title="statement not covered" >    if (!this.capabilities) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.capabilities) {</span>
 <span class="cstat-no" title="statement not covered" >      return await this.initialize();</span>
     }
 <span class="cstat-no" title="statement not covered" >    return this.capabilities;</span>
@@ -988,14 +988,14 @@ export interface BiometricSettings {
 <span class="cstat-no" title="statement not covered" >    try {</span>
       const capabilities = <span class="cstat-no" title="statement not covered" >await this.getCapabilities();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (!capabilities.isSupported) {</span>
+<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (!capabilities.isSupported) {</span>
 <span class="cstat-no" title="statement not covered" >        return {</span>
           success: false,
           error: 'Biometric authentication is not supported on this device',
         };
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (!capabilities.isEnrolled) {</span>
+<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (!capabilities.isEnrolled) {</span>
 <span class="cstat-no" title="statement not covered" >        return {</span>
           success: false,
           error: 'No biometric credentials are enrolled on this device',
@@ -1003,7 +1003,7 @@ export interface BiometricSettings {
       }
 &nbsp;
       const isEnabled = <span class="cstat-no" title="statement not covered" >await BiometricStorage.isBiometricEnabled();</span>
-<span class="cstat-no" title="statement not covered" >      if (!isEnabled) {</span>
+<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (!isEnabled) {</span>
 <span class="cstat-no" title="statement not covered" >        return {</span>
           success: false,
           error: 'Biometric authentication is disabled in app settings',
@@ -1054,14 +1054,14 @@ export interface BiometricSettings {
 <span class="cstat-no" title="statement not covered" >    try {</span>
       const capabilities = <span class="cstat-no" title="statement not covered" >await this.getCapabilities();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (!capabilities.isSupported) {</span>
+<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (!capabilities.isSupported) {</span>
 <span class="cstat-no" title="statement not covered" >        return {</span>
           success: false,
           error: 'Biometric authentication is not supported on this device',
         };
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (!capabilities.isEnrolled) {</span>
+<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (!capabilities.isEnrolled) {</span>
 <span class="cstat-no" title="statement not covered" >        return {</span>
           success: false,
           error: 'Please set up biometric authentication in your device settings first',
@@ -1123,13 +1123,13 @@ export interface BiometricSettings {
    * Get biometric type display name
    */
 <span class="fstat-no" title="function not covered" >  getBiometricTypeName(</span>types: LocalAuthentication.AuthenticationType[]): string {
-<span class="cstat-no" title="statement not covered" >    if (types.includes(LocalAuthentication.AuthenticationType.FACIAL_RECOGNITION)) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (types.includes(LocalAuthentication.AuthenticationType.FACIAL_RECOGNITION)) {</span>
 <span class="cstat-no" title="statement not covered" >      return Platform.OS === 'ios' ? 'Face ID' : 'Face Recognition';</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (types.includes(LocalAuthentication.AuthenticationType.FINGERPRINT)) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (types.includes(LocalAuthentication.AuthenticationType.FINGERPRINT)) {</span>
 <span class="cstat-no" title="statement not covered" >      return Platform.OS === 'ios' ? 'Touch ID' : 'Fingerprint';</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (types.includes(LocalAuthentication.AuthenticationType.IRIS)) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (types.includes(LocalAuthentication.AuthenticationType.IRIS)) {</span>
 <span class="cstat-no" title="statement not covered" >      return 'Iris Recognition';</span>
     }
 <span class="cstat-no" title="statement not covered" >    return 'Biometric Authentication';</span>
@@ -1159,7 +1159,7 @@ export interface BiometricSettings {
 <span class="fstat-no" title="function not covered" >  getRecommendedSettings(</span>): BiometricSettings {
     const capabilities = <span class="cstat-no" title="statement not covered" >this.capabilities;</span>
     
-<span class="cstat-no" title="statement not covered" >    if (!capabilities) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (!capabilities) {</span>
 <span class="cstat-no" title="statement not covered" >      return {</span>
         enabled: false,
       };
@@ -1195,16 +1195,16 @@ export interface BiometricSettings {
 <span class="cstat-no" title="statement not covered" >      if (!capabilities.hasHardware) {</span>
 <span class="cstat-no" title="statement not covered" >        issues.push('Biometric hardware not available on this device');</span>
       } else {
-<span class="cstat-no" title="statement not covered" >        if (!capabilities.isEnrolled) {</span>
+<span class="cstat-no" title="statement not covered" >        <span class="missing-if-branch" title="if path not taken" >I</span>if (!capabilities.isEnrolled) {</span>
 <span class="cstat-no" title="statement not covered" >          issues.push('No biometric credentials enrolled');</span>
 <span class="cstat-no" title="statement not covered" >          recommendations.push('Set up biometric authentication in device settings');</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (capabilities.securityLevel === LocalAuthentication.SecurityLevel.BIOMETRIC_WEAK) {</span>
+<span class="cstat-no" title="statement not covered" >        <span class="missing-if-branch" title="if path not taken" >I</span>if (capabilities.securityLevel === LocalAuthentication.SecurityLevel.BIOMETRIC_WEAK) {</span>
 <span class="cstat-no" title="statement not covered" >          recommendations.push('Consider using stronger biometric authentication if available');</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (capabilities.availableTypes.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >        <span class="missing-if-branch" title="if path not taken" >I</span>if (capabilities.availableTypes.length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >          issues.push('No biometric authentication methods available');</span>
         }
       }
@@ -1229,13 +1229,13 @@ export interface BiometricSettings {
    * Get primary biometric type
    */
   private <span class="fstat-no" title="function not covered" >getPrimaryBiometricType(</span>types: LocalAuthentication.AuthenticationType[]): string {
-<span class="cstat-no" title="statement not covered" >    if (types.includes(LocalAuthentication.AuthenticationType.FACIAL_RECOGNITION)) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (types.includes(LocalAuthentication.AuthenticationType.FACIAL_RECOGNITION)) {</span>
 <span class="cstat-no" title="statement not covered" >      return 'face';</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (types.includes(LocalAuthentication.AuthenticationType.FINGERPRINT)) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (types.includes(LocalAuthentication.AuthenticationType.FINGERPRINT)) {</span>
 <span class="cstat-no" title="statement not covered" >      return 'fingerprint';</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (types.includes(LocalAuthentication.AuthenticationType.IRIS)) {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (types.includes(LocalAuthentication.AuthenticationType.IRIS)) {</span>
 <span class="cstat-no" title="statement not covered" >      return 'iris';</span>
     }
 <span class="cstat-no" title="statement not covered" >    return 'biometric';</span>
@@ -1279,7 +1279,7 @@ export const <span class="cstat-no" title="statement not covered" >getBiometricC
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-05T20:17:54.229Z
+                at 2025-09-06T17:11:24.914Z
             </div>
         <script src="../prettify.js"></script>
         <script>
