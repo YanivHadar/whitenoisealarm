@@ -105,7 +105,7 @@ jobs:
           name: ${{ matrix.test-suite }}-coverage
 
       - name: Archive test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: unit-test-results-${{ matrix.test-suite }}
@@ -182,7 +182,7 @@ jobs:
           EOF
 
       - name: Upload reliability report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: reliability-report
           path: reliability-report.md
@@ -242,7 +242,7 @@ jobs:
           npx detox test --configuration ios.sim.debug --maxWorkers 1 --cleanup
 
       - name: Upload iOS test artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: e2e-ios-artifacts
@@ -308,7 +308,7 @@ jobs:
           npx detox test --configuration android.emu.debug --maxWorkers 1 --cleanup
 
       - name: Upload Android test artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: e2e-android-artifacts
@@ -358,7 +358,7 @@ jobs:
           cat performance-results.json | jq -r '.results[] | "- \(.name): \(.duration)ms (target: \(.target)ms)"' >> performance-report.md
 
       - name: Upload performance report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: performance-report
           path: performance-report.md
@@ -442,7 +442,7 @@ jobs:
           EOF
 
       - name: Upload test summary
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-summary-report
           path: test-summary.md
