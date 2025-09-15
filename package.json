@@ -52,7 +52,7 @@
     "expo-local-authentication": "^16.0.5",
     "expo-notifications": "^0.31.4",
     "expo-secure-store": "~14.2.4",
-    "expo-status-bar": "~2.2.3",
+    "expo-status-bar": "~3.0.8",
     "expo-task-manager": "^13.1.6",
     "immer": "^10.1.3",
     "react": "19.1.1",
